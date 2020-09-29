@@ -37,3 +37,4 @@ Route::post('/addCategory', 'categoriesController@addCategory');
 
 //subCategories routes
 Route::get('/subCategories', 'subCategoriesController@index');
+Route::post('/addSubCategory', 'subCategoriesController@addSubCategory');

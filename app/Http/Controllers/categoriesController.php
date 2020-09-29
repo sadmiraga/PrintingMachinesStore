@@ -16,6 +16,12 @@ class categoriesController extends Controller
 
     public function addCategory(Request $request)
     {
+
+        $request->validate([
+            'profile_image'     =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'categoryName' => 'max:255',
+        ]);
+
         $category = new category();
         $category->name = $request->input('categoryName');
         $category->save();
