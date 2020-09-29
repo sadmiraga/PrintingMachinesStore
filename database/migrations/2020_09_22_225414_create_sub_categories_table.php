@@ -4,20 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
-//manufacturer - string
-// model - string
-// year -
-// stock number - string
-// impresions ??  integer
-//sheet size  = string
-//condition
-// description
-// number of colors
-
-
-
-class CreateMachinesTable extends Migration
+class CreateSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -26,9 +13,12 @@ class CreateMachinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('machines', function (Blueprint $table) {
-            $table->id();
+        Schema::create('sub_categories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
             $table->timestamps();
+            $table->unsignedInteger('categoryID')->unsigned();
+            $table->foreign('categoryID')->references('id')->on('categories');
         });
     }
 
@@ -39,6 +29,6 @@ class CreateMachinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('machines');
+        Schema::dropIfExists('sub_categories');
     }
 }

@@ -13,7 +13,7 @@ class machineController extends Controller
      */
     public function index()
     {
-        //
+        return 'sve masine buraz hehe';
     }
 
     /**

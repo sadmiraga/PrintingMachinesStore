@@ -24,3 +24,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/design', 'productController@design');
 
 Route::get('/admin', 'adminController@index');
+
+Route::get('/machines', 'machineController@index');
+
+
+
+
+//category routes
+Route::get('/categories', 'categoriesController@index');
+Route::post('/addCategory', 'categoriesController@addCategory');
+
+
+//subCategories routes
+Route::get('/subCategories', 'subCategoriesController@index');
