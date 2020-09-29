@@ -18,13 +18,30 @@ class categoriesController extends Controller
     {
 
         $request->validate([
-            'profile_image'     =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'categoryImage'     =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'categoryName' => 'max:255',
         ]);
 
+        //create new category
         $category = new category();
+
+
+        //check if user uploaded image
+        if ($request->has('categoryImage')) {
+
+
+
+            //save name of picture in db
+            $imageName = time() . '.' . request()->categoryImage->getClientOriginalExtension();
+
+            //move pic in public/images
+            request()->categoryImage->move(public_path('images/categories'), $imageName);
+            $category->categoryImage = $imageName;
+        }
+
+
         $category->name = $request->input('categoryName');
         $category->save();
-        return redirect()->back();
+        return redirect('/categories');
     }
 }

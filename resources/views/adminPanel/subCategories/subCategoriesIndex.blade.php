@@ -22,7 +22,7 @@
 
 
 
-<table class="table table-hover">
+<table style="color:white;" class="table">
     <thead>
       <tr>
         <th scope="col">Ime Podkategorije</th>
