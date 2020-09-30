@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- StAyles -->
-    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -27,12 +27,12 @@
         <img class="logo" id="logoID" src="images/logoBlack.png" alt="logo">
         <nav>
             <ul class="nav-links">
-                <li><a id="home" href="#">Home</a></li>
-                <li><a id="equipment" href="#">Equipment</a></li>
-                <li><a id="about" href="#">About</a></li>
+                <li class="navbar-li"><a id="home" href="#">Home</a></li>
+                <li class="navbar-li"><a id="equipment" href="#">Equipment</a></li>
+                <li class="navbar-li"><a id="about" href="#">About</a></li>
             </ul>
         </nav>
-        <a class="cta" href="#"><button id="navbar-buttonID">Contact</button></a>
+        <a href="#"><button id="navbar-buttonID">Contact</button></a>
     </header>
 
 
@@ -49,6 +49,7 @@
             document.getElementById("logoID").style.height = "80px";
             document.getElementById("logoID").src = "images/logoWhite.png";
             document.getElementById("home").style.color = "white";
+            document.getElementById("home").style.marginTop = "20px";
             document.getElementById("equipment").style.color = "white";
             document.getElementById("about").style.color = "white";
             document.getElementById("navbar-buttonID").style.backgroundColor = "white";
@@ -78,11 +79,11 @@
 
     <footer class="footer">
         <div class="contact">
-            <ul>
-                <li>
+            <ul class="footer-ul">
+                <li class="footer-li">
                     <h3>CONTACT</h3>
                 </li>
-                <li>
+                <li class="footer-li">
                     <h3 class="contact-number">+386 069 100 200</h3>
                 </li>
             </ul>
