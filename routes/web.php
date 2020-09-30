@@ -33,8 +33,14 @@ Route::get('/machines', 'machineController@index');
 //category routes
 Route::get('/categories', 'categoriesController@index');
 Route::post('/addCategory', 'categoriesController@addCategory');
+Route::get('/deleteCategory/{categoryID}', 'categoriesController@deleteCategory');
+Route::get('/editCategory/{categoryID}', 'categoriesController@editCategoryIndex');
+Route::post('/updateCategory', 'categoriesController@editCategoryExe');
 
 
 //subCategories routes
 Route::get('/subCategories', 'subCategoriesController@index');
 Route::post('/addSubCategory', 'subCategoriesController@addSubCategory');
+Route::get('/editSubCategory/{subCategoryID}', 'subCategoriesController@editSubCategoryIndex');
+Route::post('/updateSubCategory', 'subCategoriesController@editSubCategoryExe');
+Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@deleteSubCategory');
