@@ -28,6 +28,8 @@ Route::get('/admin', 'adminController@index');
 Route::get('/machines', 'machineController@index');
 
 
+//ajax routes
+Route::get('/getSubCategories', 'subCategoriesController@getSubCategories');
 
 
 //category routes

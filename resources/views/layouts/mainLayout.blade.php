@@ -74,7 +74,7 @@
         <img class="heroimg" src="images/heroTest.png">
     </div>
     <div class="content">
-        content
+        @yield('content')
     </div>
 
     <footer class="footer">

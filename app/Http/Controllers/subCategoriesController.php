@@ -12,6 +12,16 @@ use App\subCategory;
 class subCategoriesController extends Controller
 {
 
+    //dynamic dropdown
+    public function getSubCategories(Request $request)
+    {
+        $subCategories = DB::table("sub_categories")
+            ->where("categoryID", $request->categoryID)
+            ->pluck("name", "id");
+        return response()->json($subCategories);
+    }
+
+
     //subcategory index page
     public function index()
     {

@@ -22,7 +22,7 @@
 
 
 
-<table style="color:white;" class="table">
+<table class="table">
     <thead>
       <tr>
         <th scope="col">Ime Podkategorije</th>

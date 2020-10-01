@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.mainLayout')
 @section('content')
 
 
@@ -19,7 +19,7 @@
 {!! Form::close() !!}
 
 
-<table style="color:white;" class="table">
+<table  class="table">
     <thead>
       <tr>
         <th scope="col">Ime Kategorije</th>

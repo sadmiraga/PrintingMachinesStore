@@ -45,7 +45,7 @@ class CreateMachinesTable extends Migration
             $table->timestamps();
 
             //image
-            $table->string('categoryImage');
+            $table->string('machineImage');
 
             //CATEGORY foreign key
             $table->unsignedInteger('categoryID')->unsigned();
