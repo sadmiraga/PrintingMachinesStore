@@ -25,7 +25,6 @@ Route::get('/design', 'productController@design');
 
 Route::get('/admin', 'adminController@index');
 
-Route::get('/machines', 'machineController@index');
 
 
 //ajax routes
@@ -46,3 +45,13 @@ Route::post('/addSubCategory', 'subCategoriesController@addSubCategory');
 Route::get('/editSubCategory/{subCategoryID}', 'subCategoriesController@editSubCategoryIndex');
 Route::post('/updateSubCategory', 'subCategoriesController@editSubCategoryExe');
 Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@deleteSubCategory');
+
+
+//machines routes
+Route::get('/machines', 'machineController@index');
+Route::post('/addMachine', 'machineController@addMachineExe');
+
+
+
+//test routes
+Route::get('/test', 'machineController@test');

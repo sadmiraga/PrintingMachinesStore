@@ -8,11 +8,11 @@
 {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
 <br>
 
-{!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite proizvajalca masine'])!!}
+{!!Form::text('manufacturer','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite proizvajalca masine'])!!}
 <br>
 
-<label> Letnik masine</label>
-{{Form::number('year', 2020)}}
+<label> Letnik masine </label> <br>
+{{Form::number('year', '')}}
 <br>
 
 <br>
@@ -21,7 +21,7 @@
 <br>
 
 <label> število barv</label>
-{{Form::number('year', 1)}}
+{{Form::number('numberOfColors', 1)}}
 <br>
 
 {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet size'])!!}
@@ -33,16 +33,19 @@
 
 {!!Form::text('stockNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Stock Number'])!!}
 
+{!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial Number'])!!}
+
 
 <label>Impresions</label>
-{{Form::number('year', 1)}}
+{{Form::number('impresions', 1)}}
 <br>
 
 <label>Price</label>
-{{Form::number('year', 1)}} €
+
+{!! Form::input('number', 'price', null, ['class' => 'form-control','required'=>'required']) !!}
 <br>
 
-{!! Form::textarea('description', null, [ 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','placeholder'=>'Vpišite opis mašine']) !!}
+{!! Form::textarea('description', null, [ 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','placeholder'=>'Vpišite opis mašine', 'required'=>'required']) !!}
 <br> <br>
 
 <label>Izberite Kategorijo</label>
@@ -63,15 +66,6 @@
         <!-- ajax -->
         <script src=//www.codermen.com/js/jquery.js></script>
 
-<!--
-    you choose category
-    check if there is subcategories for that category
-    if there is subcategories make other select visible
-    if not stay like that
--->
-
-
-
 {!! Form::submit('Dodaj',['class'=>'btn btn-success']) !!}
 {!! Form::close() !!}
 
@@ -91,7 +85,7 @@ if(categoryID){
         var numberOfSubCategories = 0;
 
         $("#subCategoryID").empty();
-        $("#subCategoryID").append('<option>Select</option>');
+        $("#subCategoryID").append('<option value="0">Select</option>');
         $.each(res,function(key,value){
             numberOfSubCategories++;
         $("#subCategoryID").append('<option value="'+key+'">'+value+'</option>');
@@ -104,9 +98,7 @@ if(categoryID){
         } else if(numberOfSubCategories > 0){
             document.getElementById("subCategoryID").style.visibility = "visible";
             document.getElementById("labelForSubCategory").style.visibility = "visible";
-
         }
-
     }else{
         $("#subCategoryID").empty();
     }

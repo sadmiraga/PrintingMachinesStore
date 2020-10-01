@@ -37,8 +37,9 @@ class CreateMachinesTable extends Migration
             $table->integer('year')->nullable;
             $table->integer('numberOfColors')->nullable;
             $table->string('sheetSize')->nullable;
-            $table->string('condition')->nulalble;
+            $table->string('condition');
             $table->string('stockNumber')->nullable;
+            $table->string('serialNumber')->nullable;
             $table->integer('impresions')->nullable;
             $table->integer('price');
             $table->text('description');
@@ -51,9 +52,9 @@ class CreateMachinesTable extends Migration
             $table->unsignedInteger('categoryID')->unsigned();
             $table->foreign('categoryID')->references('id')->on('categories');
 
-            //SUBcategory foreign key
-            $table->unsignedInteger('subCategoryID')->unsigned();
-            $table->foreign('subCategoryID')->references('id')->on('sub_categories');
+            //SUBCATEGORY foreign key
+            $table->integer('subCategoryID')->unsigned()->nullable();
+            $table->foreign('subCategoryID')->references('id')->on('sub_categories')->onDelete('set null');
         });
     }
 
