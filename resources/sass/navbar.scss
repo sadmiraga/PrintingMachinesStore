@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 * {
     box-sizing: border-box;
@@ -96,9 +98,6 @@ header {
 }
 
 .footer .footer-ul .footer-li {
-    color: #105561;
-    margin: 50px 0;
-    padding: 0;
     list-style-type: none;
 }
 
@@ -135,4 +134,16 @@ header {
 .footer .subscribe-button:hover {
     background-color: #105561;
     color: #f8d567;
+}
+
+.newslatter .footer-fb {
+    margin-left: 40%;
+}
+
+.newslatter img {
+    width: 30px;
+    margin-left: 25px;
+}
+
+.newslatter img:hover {
 }

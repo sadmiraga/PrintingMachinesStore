@@ -17,6 +17,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="mainLayout.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- StAyles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -93,6 +94,15 @@
             <h3>NEWSLETTER</h3>
             <input type="email" placeholder="E-mail" name="email" required>
             <button class="subscribe-button">Subscribe</button>
+
+            <img class="footer-fb" src='/images/fb-white.png' onmouseover="this.src='/images/fb-yellow.png';"
+                onmouseout="this.src='/images/fb-white.png';" />
+            <img class="footer-linkedin" src="/images/linkedin-white.png"
+                onmouseover="this.src='/images/linkedin-yellow.png';"
+                onmouseout="this.src='/images/linkedin-white.png';" />
+        </div>
+
+        <div class="footer-icons">
         </div>
     </footer>
 
