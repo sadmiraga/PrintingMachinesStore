@@ -33,7 +33,6 @@ class machineController extends Controller
     public function addMachineExe(Request $request)
     {
 
-
         //make new machine
         $machine = new machine();
 
@@ -115,6 +114,31 @@ class machineController extends Controller
                 $imageModel->save();
             }
         }
+
+
+        return redirect('/machines');
+    }
+
+
+
+    public function delete($machineID)
+    {
+
+        $pictures = picture::where('machineID', $machineID)->get();
+
+        //delete pictures from database and from folders
+        foreach ($pictures as $picture) {
+            $path = public_path() . "/images/machines/" . $picture->image;
+            unlink($path);
+            $picture->delete();
+        }
+
+        //delete machine
+        $machine = machine::find($machineID);
+        $machine->delete();
+
+
+
 
 
         return redirect('/machines');

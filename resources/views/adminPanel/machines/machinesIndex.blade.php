@@ -169,7 +169,7 @@ if(categoryID){
             </td>
             <td>Pictures</td>
             <td><button onclick="location.href='/editMachine/{{$machine->id}}'" class="btn btn-warning">Edit </button></td>
-            <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">Delete </button></td>
+            <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">delete</button></td>
         </tr>
       @endforeach
 

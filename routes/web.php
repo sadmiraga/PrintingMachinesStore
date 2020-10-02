@@ -50,3 +50,4 @@ Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@delete
 //machines routes
 Route::get('/machines', 'machineController@index');
 Route::post('/addMachine', 'machineController@addMachineExe');
+Route::get('/deleteMachine/{machineID}', 'machineController@delete');
