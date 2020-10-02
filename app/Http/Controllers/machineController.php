@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Laravel\Ui\Presets\React;
 use App\machine;
+use App\picture;
 
 class machineController extends Controller
 {
+
 
 
 
@@ -20,29 +22,20 @@ class machineController extends Controller
         //get all subcategories
         $subCategories = DB::table('sub_categories')->orderBy('created_at', 'desc')->get();
 
-        return view('adminPanel.machines.machinesIndex')->with('categories', $categories)->with('subCategories', $subCategories);
+        //get all machines
+        $machines = DB::table('machines')->orderBy('created_at', 'desc')->get();
+
+        return view('adminPanel.machines.machinesIndex')->with('categories', $categories)
+            ->with('subCategories', $subCategories)
+            ->with('machines', $machines);
     }
 
     public function addMachineExe(Request $request)
     {
-        //validate data
-        $request->validate([
-            'machineImage'     =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
+
 
         //make new machine
         $machine = new machine();
-
-
-        // IMAGE check if user uploaded image
-        if ($request->has('machineImage')) {
-            //save name of picture in db
-            $imageName = time() . '.' . request()->machineImage->getClientOriginalExtension();
-
-            //move pic in public/images
-            request()->machineImage->move(public_path('images/machines'), $imageName);
-            $machine->machineImage = $imageName;
-        }
 
         //MODEL
         if ($request->input('machineModel') != null) {
@@ -69,24 +62,10 @@ class machineController extends Controller
             $machine->sheetSize = $request->input('sheetSize');
         }
 
-        //condition
-        $machine->condition = $request->input('condition');
-
-
         //impresions
         if ($request->input('impresions') > null) {
             $machine->impresions = $request->input('impresions');
         }
-
-
-
-        //subCategory ID
-        if ($request->input('subCategoryID') == 0) {
-            $machine->subCategoryID = null;
-        } else {
-            $machine->subCategoryID = $request->input('subCategoryID');
-        }
-
 
         //stock Number
         if ($request->input('stockNumber') != null) {
@@ -99,6 +78,16 @@ class machineController extends Controller
             $machine->serialNumber = $request->input('serialNumber');
         }
 
+        //subCategory ID
+        if ($request->input('subCategoryID') == 0) {
+            $machine->subCategoryID = null;
+        } else {
+            $machine->subCategoryID = $request->input('subCategoryID');
+        }
+
+        //condition
+        $machine->condition = $request->input('condition');
+
         //price
         $machine->price = $request->input('price');
 
@@ -108,7 +97,26 @@ class machineController extends Controller
         //category
         $machine->categoryID = $request->input('categoryID');
 
+        //add machine to database
         $machine->save();
+
+        //add IMAGES related to added machine
+        $images = $request->file('files');
+        if ($request->hasFile('files')) {
+            foreach ($images as $item) {
+                $var = date_create();
+                $time = date_format($var, 'YmdHis');
+                $imageName = $time . '-' . $item->getClientOriginalName();
+                $item->move(public_path('images/machines'), $imageName);
+
+                $imageModel = new picture();
+                $imageModel->machineID = $machine->id;
+                $imageModel->image = $imageName;
+                $imageModel->save();
+            }
+        }
+
+
         return redirect('/machines');
     }
 }

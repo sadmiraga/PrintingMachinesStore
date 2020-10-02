@@ -3,7 +3,8 @@
 @section('content')
 
 
-{!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
+{!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
+
 
 {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
 <br>
@@ -16,8 +17,8 @@
 <br>
 
 <br>
-<label> Vnesite sliko za mašino </label>
-<input id="machineImage"  type="file" class="form-control" name="machineImage">
+<label> Vnesite slike za mašino </label>
+<input   type="file" name="files[]" multiple > <br/>
 <br>
 
 <label> število barv</label>
@@ -111,7 +112,69 @@ if(categoryID){
 });
 </script>
 
+<br><br><br><br><br>
 
+<!-- MACHINES TABLE -->
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Price</th>
+        <th scope="col">Condition</th>
+        <th scope="col">Model</th>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Year</th>
+        <th scope="col"># of colors</th>
+        <th scope="col">Sheet size</th>
+        <th scope="col">Stock Number</th>
+        <th scope="col">Serial Number</th>
+        <th scope="col">Impresions</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
+        <th scope="col">Sub Category</th>
+        <th scope="col">Images</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      @foreach($machines as $machine)
+
+        <tr>
+            <th scope="row">{{$machine->price}}€</th>
+            <td>{{$machine->condition}}</td>
+            <td>{{$machine->model}}</td>
+            <td>{{$machine->manufacturer}}</td>
+            <td>{{$machine->year}}</td>
+            <td>{{$machine->numberOfColors}}</td>
+            <td>{{$machine->sheetSize}}</td>
+            <td>{{$machine->stockNumber}}</td>
+            <td>{{$machine->serialNumber}}</td>
+            <td>{{$machine->impresions}}</td>
+            <td>description</td>
+            <td>
+                @foreach($categories as $category)
+                    @if($category->id == $machine->categoryID)
+                        {{$category->name}}
+                    @endif
+                @endforeach
+            </td>
+            <td>
+                @foreach($subCategories as $subCategory)
+                    @if($subCagory->id == $machine->subCategoryID)
+                        {{$subCategory->name}}
+                    @endif
+                @endforeach
+            </td>
+            <td>Pictures</td>
+            <td><button onclick="location.href='/editMachine/{{$machine->id}}'" class="btn btn-warning">Edit </button></td>
+            <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">Delete </button></td>
+        </tr>
+      @endforeach
+
+    </tbody>
+  </table>
 
 
 
