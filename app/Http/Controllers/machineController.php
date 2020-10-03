@@ -49,6 +49,8 @@ class machineController extends Controller
         //make new machine
         $machine = new machine();
 
+        $machine->name = $request->input('machineName');
+
         //MODEL
         if ($request->input('machineModel') != null) {
             $machine->model = $request->input('machineModel');
@@ -196,6 +198,7 @@ class machineController extends Controller
         //find machine to edit
         $machine = machine::find($request->input('machineID'));
 
+        $machine->name = $request->input('machineName');
 
         //model
         if ($request->has('machineModel')) {

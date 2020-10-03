@@ -31,6 +31,8 @@ class CreateMachinesTable extends Migration
             //primary key
             $table->increments('id');
 
+            $table->string('name');
+
             // machine info
             $table->string('model')->nullable;
             $table->string('manufacturer')->nullable;

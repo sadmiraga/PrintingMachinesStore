@@ -6,6 +6,9 @@
 {!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 @csrf
 
+{!!Form::text('machineName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Input machine Name', 'required'=>'required'])!!}
+<br>
+
 {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
 <br>
 
@@ -118,6 +121,7 @@ if(categoryID){
 <table class="table">
     <thead>
       <tr>
+        <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Condition</th>
         <th scope="col">Model</th>
@@ -142,7 +146,8 @@ if(categoryID){
       @foreach($machines as $machine)
 
         <tr>
-            <th scope="row">{{$machine->price}}€</th>
+            <th scope="row">{{$machine->name}}</th>
+            <td >{{$machine->price}}€</th>
             <td>{{$machine->condition}}</td>
             <td>{{$machine->model}}</td>
             <td>{{$machine->manufacturer}}</td>

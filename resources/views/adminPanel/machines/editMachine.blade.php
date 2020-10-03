@@ -8,6 +8,8 @@
 
 <input name="machineID" type="hidden" value="{{$machine->id}}">
 
+{!!Form::text('machineName',$machine->name,['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
+
 <!-- MODEL -->
 @if($machine->model != null)
     {!!Form::text('machineModel',$machine->model,['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
