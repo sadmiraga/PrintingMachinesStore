@@ -59,3 +59,11 @@ Route::post('/updateMachine', 'machineController@updateMachine');
 Route::get('/machineImages/{machineID}', 'pictureController@machineImages');
 Route::get('/deleteImage/{imageID}', 'pictureController@deleteImage');
 Route::post('/addImageToMachine', 'pictureController@addImageToMachine');
+
+
+
+//search rutes
+Route::post('/search', 'searchController@machineSearch');
+
+//USER exeperience routes
+Route::get('/machine/{machineiD}', 'uixController@showMachine');

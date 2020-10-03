@@ -93,7 +93,7 @@
         <br><br>
         <div class="newslatter">
             <h3>NEWSLETTER</h3>
-            <input type="email" placeholder="E-mail" name="email" required>
+            <input type="email" placeholder="E-mail" name="email" >
             <button class="subscribe-button">Subscribe</button>
 
             <img class="footer-fb" src='/images/fb-white.png' onmouseover="this.src='/images/fb-yellow.png';"
