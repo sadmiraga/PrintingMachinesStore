@@ -51,3 +51,11 @@ Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@delete
 Route::get('/machines', 'machineController@index');
 Route::post('/addMachine', 'machineController@addMachineExe');
 Route::get('/deleteMachine/{machineID}', 'machineController@delete');
+Route::get('/editMachine/{machineID}', 'machineController@editMachine');
+Route::post('/updateMachine', 'machineController@updateMachine');
+
+
+//images routes
+Route::get('/machineImages/{machineID}', 'pictureController@machineImages');
+Route::get('/deleteImage/{imageID}', 'pictureController@deleteImage');
+Route::post('/addImageToMachine', 'pictureController@addImageToMachine');

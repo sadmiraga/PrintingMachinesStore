@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Ui\Presets\React;
 use App\machine;
 use App\picture;
+use App\subCategory;
 
 class machineController extends Controller
 {
@@ -136,11 +137,100 @@ class machineController extends Controller
         //delete machine
         $machine = machine::find($machineID);
         $machine->delete();
+        return redirect('/machines');
+    }
+
+
+    //edit machine index
+    public function editMachine($machineID)
+    {
+        //find MACHINE
+        $machine = machine::find($machineID);
+
+        //get all categories
+        $categories = DB::table('categories')->orderBy('created_at', 'desc')->get();
+
+        //get all subcategories
+        $subCategories = DB::table('sub_categories')->orderBy('created_at', 'desc')->get();
+
+        //get all subcategories from selected category
+        $subCategories = subCategory::where('categoryID', $machine->categoryID)->get();
+
+
+        return view('adminPanel.machines.editMachine')->with('machine', $machine)->with('categories', $categories)->with('subCategories', $subCategories);
+    }
+
+    //edit machine exe
+    public function updateMachine(Request $request)
+    {
+
+        //find machine to edit
+        $machine = machine::find($request->input('machineID'));
+
+
+        //model
+        if ($request->has('machineModel')) {
+            $machine->model = $request->input('machineModel');
+        }
 
 
 
+        //manufacturer
+        if ($request->has('manufacturer')) {
+            $machine->manufacturer = $request->input('manufacturer');
+        }
 
+        //year
+        if ($request->has('year')) {
+            $machine->year = $request->input('year');
+        }
 
+        //numberOfColors
+        if ($request->has('numberOfColors')) {
+            $machine->numberOfColors = $request->input('numberOfColors');
+        }
+
+        //sheetSize
+        if ($request->has('sheetSize')) {
+            $machine->sheetSize = $request->input('sheetSize');
+        }
+
+        //condition
+        if ($request->has('condition')) {
+            $machine->condition = $request->input('condition');
+        }
+
+        //stockNumber
+        if ($request->has('stockNumber')) {
+            $machine->stockNumber = $request->input('stockNumber');
+        }
+
+        //serialNumber
+        if ($request->has('serialNumber')) {
+            $machine->serialNumber = $request->input('serialNumber');
+        }
+
+        //impresions
+        if ($request->has('impresions')) {
+            $machine->impresions = $request->input('impresions');
+        }
+
+        //price
+        if ($request->has('price')) {
+            $machine->price = $request->input('price');
+        }
+
+        //categoryID
+        if ($request->has('categoryID')) {
+            $machine->categoryID = $request->input('categoryID');
+        }
+
+        //subCategoryID
+        if ($request->has('subCategoryID')) {
+            $machine->subCategoryID = $request->input('subCategoryID');
+        }
+
+        $machine->save();
         return redirect('/machines');
     }
 }

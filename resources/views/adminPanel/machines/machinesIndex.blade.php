@@ -22,7 +22,7 @@
 <br>
 
 <label> število barv</label>
-{{Form::number('numberOfColors', 1)}}
+{{Form::number('numberOfColors', 0)}}
 <br>
 
 {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet size'])!!}
@@ -38,7 +38,7 @@
 
 
 <label>Impresions</label>
-{{Form::number('impresions', 1)}}
+{{Form::number('impresions', 0)}}
 <br>
 
 <label>Price</label>
@@ -162,12 +162,12 @@ if(categoryID){
             </td>
             <td>
                 @foreach($subCategories as $subCategory)
-                    @if($subCagory->id == $machine->subCategoryID)
+                    @if($subCategory->id == $machine->subCategoryID)
                         {{$subCategory->name}}
                     @endif
                 @endforeach
             </td>
-            <td>Pictures</td>
+            <td onMouseOver="this.style.cursor='pointer'" onclick="location.href='/machineImages/{{$machine->id}}'">Pictures</td>
             <td><button onclick="location.href='/editMachine/{{$machine->id}}'" class="btn btn-warning">Edit </button></td>
             <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">delete</button></td>
         </tr>
