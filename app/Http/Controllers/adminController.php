@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
@@ -13,7 +14,15 @@ class adminController extends Controller
      */
     public function index()
     {
-        return view('adminPanel.index');
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                return view('adminPanel.index');
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     /**

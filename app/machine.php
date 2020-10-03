@@ -15,4 +15,9 @@ class machine extends Model
     {
         return $this->belongsTo('App\subCategory');
     }
+
+    public function picture()
+    {
+        return $this->hasMany('App\picture');
+    }
 }

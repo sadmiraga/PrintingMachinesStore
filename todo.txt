@@ -1,2 +1,5 @@
 -ograniciti korisnike koji mogu dodavati stvari i uredjivati ih
 - urediti error messagese
+
+
+

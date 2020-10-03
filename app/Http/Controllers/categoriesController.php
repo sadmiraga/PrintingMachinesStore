@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\category;
 use Illuminate\Support\Facades\File;
 
@@ -11,8 +12,17 @@ class categoriesController extends Controller
 {
     public function index()
     {
-        $categories = category::all();
-        return view('adminPanel.categories.categoriesIndex')->with('categories', $categories);
+
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                $categories = category::all();
+                return view('adminPanel.categories.categoriesIndex')->with('categories', $categories);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     //add new category
@@ -47,22 +57,39 @@ class categoriesController extends Controller
     //delete category
     public function deleteCategory($categoryID)
     {
-        //find category
-        $category = category::find($categoryID);
 
-        //delete image linked to category
-        $path = public_path() . "/images/categories/" . $category->categoryImage;
-        unlink($path);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                //find category
+                $category = category::find($categoryID);
 
-        //delete category
-        $category->delete();
-        return redirect('/categories');
+                //delete image linked to category
+                $path = public_path() . "/images/categories/" . $category->categoryImage;
+                unlink($path);
+
+                //delete category
+                $category->delete();
+                return redirect('/categories');
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function editCategoryIndex($categoryID)
     {
-        $category = category::find($categoryID);
-        return view('adminPanel.categories.editCategory')->with('category', $category);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                $category = category::find($categoryID);
+                return view('adminPanel.categories.editCategory')->with('category', $category);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function editCategoryExe(Request $request)

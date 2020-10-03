@@ -3,6 +3,7 @@
 @section('content')
 
 {!! Form::open(['url'=>'/updateSubCategory', 'method'=> 'post']) !!}
+@csrf
 
 {!!Form::text('subCategoryName',$subCategory->name,['class'=>'form-control','id'=>'adminPanelTextInput','required'=>'required'])!!}
 

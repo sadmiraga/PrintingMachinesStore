@@ -1,8 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.mainLayout')
 @section('content')
 
 
 {!! Form::open(['url'=>'/addCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
+
+@csrf
 
 {!!Form::text('categoryName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime kategorije','required'=>'required'])!!}
 <br>
@@ -19,7 +21,7 @@
 {!! Form::close() !!}
 
 
-<table style="color:white;" class="table">
+<table  class="table">
     <thead>
       <tr>
         <th scope="col">Ime Kategorije</th>
