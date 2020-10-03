@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,17 @@ class subCategoriesController extends Controller
     {
         $subCategories = DB::table('sub_categories')->orderBy('created_at', 'desc')->get();
         $categories = DB::table('categories')->orderBy('created_at', 'desc')->get();
-        return view('adminPanel.subCategories.subCategoriesIndex')->with('categories', $categories)->with('subCategories', $subCategories);
+
+
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                return view('adminPanel.subCategories.subCategoriesIndex')->with('categories', $categories)->with('subCategories', $subCategories);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
 
@@ -49,7 +60,19 @@ class subCategoriesController extends Controller
 
         //find subCategory
         $subCategory = subCategory::find($subCategoryID);
-        return view('adminPanel.subCategories.editSubCategory')->with('subCategory', $subCategory)->with('categories', $categories);
+
+
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                return view('adminPanel.subCategories.editSubCategory')
+                    ->with('subCategory', $subCategory)
+                    ->with('categories', $categories);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     //edit subCategory exe
@@ -67,8 +90,17 @@ class subCategoriesController extends Controller
     //delete subCategory exe
     public function deleteSubCategory($subCategoryID)
     {
-        $subCategory = subCategory::find($subCategoryID);
-        $subCategory->delete();
-        return redirect('/subCategories');
+
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                $subCategory = subCategory::find($subCategoryID);
+                $subCategory->delete();
+                return redirect('/subCategories');
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 }

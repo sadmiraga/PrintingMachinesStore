@@ -8,6 +8,7 @@ use Laravel\Ui\Presets\React;
 use App\machine;
 use App\picture;
 use App\subCategory;
+use Illuminate\Support\Facades\Auth;
 
 class machineController extends Controller
 {
@@ -17,6 +18,9 @@ class machineController extends Controller
 
     public function index()
     {
+
+
+
         //get all categories
         $categories = DB::table('categories')->orderBy('created_at', 'desc')->get();
 
@@ -26,9 +30,17 @@ class machineController extends Controller
         //get all machines
         $machines = DB::table('machines')->orderBy('created_at', 'desc')->get();
 
-        return view('adminPanel.machines.machinesIndex')->with('categories', $categories)
-            ->with('subCategories', $subCategories)
-            ->with('machines', $machines);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                return view('adminPanel.machines.machinesIndex')->with('categories', $categories)
+                    ->with('subCategories', $subCategories)
+                    ->with('machines', $machines);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function addMachineExe(Request $request)
@@ -127,17 +139,25 @@ class machineController extends Controller
 
         $pictures = picture::where('machineID', $machineID)->get();
 
-        //delete pictures from database and from folders
-        foreach ($pictures as $picture) {
-            $path = public_path() . "/images/machines/" . $picture->image;
-            unlink($path);
-            $picture->delete();
-        }
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                //delete pictures from database and from folders
+                foreach ($pictures as $picture) {
+                    $path = public_path() . "/images/machines/" . $picture->image;
+                    unlink($path);
+                    $picture->delete();
+                }
 
-        //delete machine
-        $machine = machine::find($machineID);
-        $machine->delete();
-        return redirect('/machines');
+                //delete machine
+                $machine = machine::find($machineID);
+                $machine->delete();
+                return redirect('/machines');
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
 
@@ -156,8 +176,17 @@ class machineController extends Controller
         //get all subcategories from selected category
         $subCategories = subCategory::where('categoryID', $machine->categoryID)->get();
 
-
-        return view('adminPanel.machines.editMachine')->with('machine', $machine)->with('categories', $categories)->with('subCategories', $subCategories);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                return view('adminPanel.machines.editMachine')
+                    ->with('machine', $machine)->with('categories', $categories)
+                    ->with('subCategories', $subCategories);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     //edit machine exe
@@ -172,8 +201,6 @@ class machineController extends Controller
         if ($request->has('machineModel')) {
             $machine->model = $request->input('machineModel');
         }
-
-
 
         //manufacturer
         if ($request->has('manufacturer')) {

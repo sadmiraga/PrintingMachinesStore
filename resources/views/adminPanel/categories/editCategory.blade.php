@@ -2,6 +2,7 @@
 @section('content')
 
 {!! Form::open(['url'=>'/updateCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
+@csrf
 
 {!!Form::text('categoryName',$category->name,['class'=>'form-control','id'=>'adminPanelTextInput','required'=>'required'])!!}
 <br>

@@ -4,10 +4,11 @@
 
 
 {!! Form::open(['url'=>'/addSubCategory', 'method'=> 'post']) !!}
+@csrf
+
+
 
 {!!Form::text('subCategoryName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime podkategorije','required'=>'required'])!!}
-
-
 
 <select class="form-control"  name="categoryID" id="categoryID">
     <option value="0" selected disabled> Izberite kategorijo </option>

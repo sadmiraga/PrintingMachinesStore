@@ -4,7 +4,7 @@
 <br><br><br><br><br><br><br>
 
 {!! Form::open(['url'=>'/updateMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
-
+@csrf
 
 <input name="machineID" type="hidden" value="{{$machine->id}}">
 

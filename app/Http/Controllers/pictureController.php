@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\picture;
+use Illuminate\Support\Facades\Auth;
 
 use function Symfony\Component\String\b;
 
@@ -11,8 +12,16 @@ class pictureController extends Controller
 {
     public function machineImages($machineID)
     {
-        $pictures = picture::where('machineID', $machineID)->get();
-        return view('adminPanel.machines.machineImages')->with('pictures', $pictures)->with('machineID', $machineID);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                $pictures = picture::where('machineID', $machineID)->get();
+                return view('adminPanel.machines.machineImages')->with('pictures', $pictures)->with('machineID', $machineID);
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function deleteImage($imageID)
@@ -20,13 +29,21 @@ class pictureController extends Controller
 
         $picture = picture::find($imageID);
 
-        //delete image from folder
-        $path = public_path() . "/images/machines/" . $picture->image;
-        unlink($path);
+        if ($user = Auth::user()) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 2) {
+                //delete image from folder
+                $path = public_path() . "/images/machines/" . $picture->image;
+                unlink($path);
 
-        //delete image from database
-        $picture->delete();
-        return redirect()->back();
+                //delete image from database
+                $picture->delete();
+                return redirect()->back();
+            } else {
+                return view('errorPage');
+            }
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function addImageToMachine(Request $request)

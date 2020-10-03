@@ -4,6 +4,8 @@
 
 {!! Form::open(['url'=>'/addCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 
+@csrf
+
 {!!Form::text('categoryName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime kategorije','required'=>'required'])!!}
 <br>
 
