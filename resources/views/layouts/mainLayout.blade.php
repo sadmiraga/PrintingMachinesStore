@@ -19,13 +19,18 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="mainLayout.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
     <!-- StAyles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- Navbar -->
     <header id="navbarID">
         <img class="logo" id="logoID" src="images/logoBlack.png" alt="logo">
@@ -58,7 +63,6 @@
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 //small navbar
                 var counter = 0;
-                document.getElementById("counter").innerHTML = counter;
                 document.getElementById("navbarID").style.backgroundColor = "#6AABC1";
                 document.getElementById("navbarID").style.fontSize = "20px";
                 document.getElementById("navbarID").style.padding = "2px 5%";
@@ -72,7 +76,6 @@
                 document.getElementById("navbar-buttonID").style.color = "#0088a9";
 
                 if (counter == 0) {
-                    document.getElementById("counter").style.color = "white";
                     //Home animation small
                     document.getElementById("home").onmouseover = function() {
                         mouseOverSmallHome()
@@ -142,7 +145,6 @@
 
             } else {
                 counter = 1;
-                document.getElementById("counter").innerHTML = counter;
                 document.getElementById("navbarID").style.backgroundColor = "rgba(255, 255, 255, 0.8)";
                 document.getElementById("navbarID").style.fontSize = "20px";
                 document.getElementById("navbarID").style.padding = "2px 5%";
@@ -226,15 +228,11 @@
 
     </header>
 
-    <!-- Content -->
-    <div class="hero">
-        <img class="heroimg" src="images/heroTest.png">
-    </div>
-    <div class="content">
-        <p style="color: red" id="counter">counter</p>
+    @yield('content')
 
+    <div>
+        <p>sisa</p>
     </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="contact">
@@ -260,6 +258,14 @@
                 onmouseout="this.src='/images/linkedin-white.png';" />
         </div>
     </footer>
+
+
+    <script>
+        AOS.init({
+  duration: 1200,
+})
+
+      </script>
 
 </body>
 

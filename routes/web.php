@@ -67,3 +67,6 @@ Route::post('/search', 'searchController@machineSearch');
 
 //USER exeperience routes
 Route::get('/machine/{machineiD}', 'uixController@showMachine');
+
+//Index routes
+Route::get('/indexDesign', 'productController@indexDesign');

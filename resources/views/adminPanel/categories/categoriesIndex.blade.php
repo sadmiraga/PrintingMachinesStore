@@ -1,6 +1,7 @@
 @extends('layouts.mainLayout')
 @section('content')
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 {!! Form::open(['url'=>'/addCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 

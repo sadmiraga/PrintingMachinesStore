@@ -1,0 +1,332 @@
+$background-color: #2a2e37;
+$search-bg-color: #242628;
+$icon-color: #00fede;
+$transition: all 0.5s ease;
+
+body,
+html {
+}
+
+/* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("images/heroTest.png");
+
+    /* Set a specific height */
+    height: 100vh;
+    width: 100%;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.typewrite {
+    margin-right: 50%;
+    color: white;
+    position: absolute;
+    top: 30vh;
+    margin-left: 3vw;
+    font-size: 3.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.hero-search {
+    top: 80vh;
+    font-weight: 300;
+    color: white;
+    position: absolute;
+    margin-left: 40vw;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+.container {
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100px;
+    .search {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background: #f8d567;
+        border-radius: 50%;
+        transition: all 1s;
+        z-index: 4;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+        // box-shadow: 0 0 25px 0 crimson;
+        &:hover {
+            cursor: pointer;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            margin: auto;
+            top: 22px;
+            right: 0;
+            bottom: 0;
+            left: 22px;
+            width: 12px;
+            height: 2px;
+            background: white;
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            margin: auto;
+            top: -5px;
+            right: 0;
+            bottom: 0;
+            left: -5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid white;
+            transition: all 0.5s;
+        }
+    }
+    input {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        outline: none;
+        border: none;
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        background: white;
+        color: black;
+        padding: 0 80px 0 20px;
+        border-radius: 30px;
+        // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
+        transition: all 1s;
+        opacity: 0;
+        z-index: 5;
+        font-weight: bolder;
+        letter-spacing: 0.1em;
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            width: 300px;
+            opacity: 1;
+            cursor: text;
+        }
+        &:focus ~ .search {
+            right: -250px;
+            background: #151515;
+            z-index: 6;
+            &::before {
+                top: 0;
+                left: 0;
+                width: 25px;
+            }
+            &::after {
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 2px;
+                border: none;
+                background: white;
+                border-radius: 0%;
+                transform: rotate(-45deg);
+            }
+        }
+        &::placeholder {
+            color: black;
+            opacity: 0.5;
+            font-weight: bolder;
+        }
+    }
+}
+.content-categories-main {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #e9e9e9;
+}
+.text-block {
+    position: absolute;
+    bottom: 0px;
+    width: 90%;
+    height: 15%;
+    background-color: #0a4c66b7;
+    color: white;
+    padding-left: 10%;
+}
+
+.row img {
+    width: 100%;
+}
+
+.row {
+    padding-top: 10px;
+}
+.categtories-h1 {
+    font-size: 2rem;
+    color: #0088a9;
+    text-align: center;
+}
+
+.content-text {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.contact-container {
+    background-color: #f0c332;
+    width: 60%;
+    color: white;
+    text-align: center;
+    padding-top: 5%;
+    min-height: 500px;
+}
+
+.contact-container p {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 300ms ease 0s;
+    font-weight: bold;
+}
+
+.mail {
+    margin-top: 30%;
+}
+.contact-container p:hover {
+    color: #105561;
+}
+
+.text-container {
+    width: 100%;
+    padding-left: 20%;
+}
+
+#categories-col {
+    padding-top: 30px;
+}
+
+.text-container-h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.text-container-p {
+    font-size: 15px;
+}
+
+.text-container-button {
+    padding: 5px 25px;
+    color: white;
+    background-color: #105561;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-family: "Montserrat" sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 10%;
+}
+
+.text-container-button:hover {
+    background-color: #f0c332;
+    color: #105561;
+}
+.content-parallax {
+    /* The image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("images/parallax.jpg");
+
+    /* Set a specific height */
+    min-height: 200px;
+    width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.text-parallax {
+    padding-top: 20px;
+    font-size: 60px;
+    color: white;
+}
+
+.button-parallax {
+    padding: 5px 25px;
+    color: white;
+    background-color: #0087a900;
+    outline: 3px solid #f0c332;
+    transition: 500ms ease 0s;
+}
+
+.button-parallax:hover {
+    background-color: #f0c332;
+}
+
+.content-contact {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.container-contact {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+.text-contact {
+    display: inline-flex;
+    padding: 5% 10%;
+}
+
+.contact-h1-p {
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.contact-h1-p h1 {
+    font-weight: bold;
+    font-size: 15px;
+}
+.contact-h1-p p {
+    font-size: 15px;
+}
+.contact-button-div {
+    padding-left: 60px;
+    padding-top: 57px;
+}
+.contact-button {
+    padding: 5px 25px;
+    color: white;
+    border: none;
+    outline: #f0c332;
+    background-color: #f0c332;
+    transition: 500ms ease 0s;
+}
