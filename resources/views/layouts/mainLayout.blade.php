@@ -51,7 +51,6 @@
                 <li><a href="#">German(GE)</a></li>
                 <li><a href="#">French(FR)</a></li>
         </div>
-        </div>
 
         <!--Navbar script -->
         <script>
@@ -230,42 +229,45 @@
 
     @yield('content')
 
-    <div>
-        <p>sisa</p>
-    </div>
     <!-- Footer -->
     <footer class="footer">
-        <div class="contact">
-            <ul class="footer-ul">
-                <li class="footer-li">
-                    <h3>CONTACT</h3>
-                </li>
-                <li class="footer-li">
-                    <h3 class="contact-number">+386 069 100 200</h3>
-                </li>
-            </ul>
+        <div class="footer-outter-wrap">
+            <div class="contact">
+                <ul class="footer-ul">
+                    <li class="footer-li">
+                        <h3>CONTACT</h3>
+                    </li>
+                    <li class="footer-li">
+                        <h3 class="contact-number">+386 069 100 200</h3>
+                    </li>
+                </ul>
+            </div>
+            <br><br>
+            <div class="footer-wrap">
+                <div class="newslatter">
+                    <h3>NEWSLETTER</h3>
+                    <input type="email" placeholder="E-mail" name="email">
+                </div>
+                <div class="subscribe-button-div">
+                    <button class="subscribe-button">Subscribe</button>
+                </div>
+                <div class="footer-social">
+                    <i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 30px; color: white;"
+                        id="fb-footer"></i>
+                    <i class="fa fa-linkedin-square" aria-hidden="true" style="font-size: 30px; color: white;"
+                        id="linkedin-footer"></i>
+                </div>
+            </div>
         </div>
-        <br><br>
-        <div class="newslatter">
-            <h3>NEWSLETTER</h3>
-            <input type="email" placeholder="E-mail" name="email">
-            <button class="subscribe-button">Subscribe</button>
 
-            <img class="footer-fb" src='/images/fb-white.png' onmouseover="this.src='/images/fb-yellow.png';"
-                onmouseout="this.src='/images/fb-white.png';" />
-            <img class="footer-linkedin" src="/images/linkedin-white.png"
-                onmouseover="this.src='/images/linkedin-yellow.png';"
-                onmouseout="this.src='/images/linkedin-white.png';" />
-        </div>
     </footer>
 
 
     <script>
-        AOS.init({
-  duration: 1200,
-})
-
-      </script>
+    AOS.init({
+        duration: 1200,
+    })
+    </script>
 
 </body>
 

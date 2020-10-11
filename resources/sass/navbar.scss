@@ -137,12 +137,17 @@ header {
 
 .footer {
     box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 50px 20%;
+    padding: 50px 18%;
     height: 25%;
     width: 100%;
     background-color: #6aabc1;
 }
 
+.fotter-outter-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
 .footer .footer-ul .footer-li {
     list-style-type: none;
 }
@@ -155,12 +160,21 @@ header {
 .footer .contact-number {
     color: white;
 }
+
+.footer-wrap {
+    display: flex;
+}
+
+.newslatter {
+    width: 100%;
+}
 .footer .newslatter {
     color: #6aabc1;
 }
 
 .footer input {
-    width: 40%;
+    width: 100%;
+    border: none;
     height: 36px;
 }
 
@@ -182,19 +196,25 @@ header {
     color: #f8d567;
 }
 
-.newslatter .footer-fb {
-    margin-left: 40%;
+.subscribe-button-div {
+    padding-top: 38.333px;
+    padding-right: 30%;
+    padding-left: 1%;
 }
-
-.newslatter img {
-    width: 30px;
-    margin-left: 25px;
+.footer-social {
+    display: flex;
+    padding-top: 38px;
+    padding-right: 20px;
     cursor: pointer;
-    transition: all 200ms ease 0s;
+    transition: all 1000ms;
 }
 
-.newslatter img:hover {
-    width: 32px;
+#fb-footer {
+    padding-right: 15px;
+}
+
+.footer-social i:hover {
+    color: #f8d567 !important;
 }
 
 label {
@@ -208,7 +228,22 @@ label {
     display: none;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 930px) {
+    .footer-wrap {
+        display: block;
+    }
+
+    .newslatter {
+        width: 100%;
+    }
+
+    .subscribe-button-div {
+        padding-top: 10px;
+        padding-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     label {
         display: block;
         cursor: pointer;
