@@ -53,85 +53,84 @@
                 </div>
                 @endforeach
             </div>
-            <div class="container-fluid">
-                <div class="row">
+            <div class="container">
 
 
-                    <div class="card col-md-3" style="width: 23em;">
-                        <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <a href="#">
-                                <h3 class="card-title">Ime mašine</h3>
-                            </a>
-                            <ul class="list-group list-group-flush" id="product-info">
-                                <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                                <li class="list-group-item">Model: </li>
-                                <li class="list-group-item">Year: </li>
-                            </ul>
-                            <div class="product-btn-wrap">
-                                <button class="product-btn">MAKE OFFER</button>
+                <div class="card col-md-3" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
 
-                            </div>
                         </div>
                     </div>
-
-                    <div class="card col-md-3" style="width: 23em;">
-                        <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <a href="#">
-                                <h3 class="card-title">Ime mašine</h3>
-                            </a>
-                            <ul class="list-group list-group-flush" id="product-info">
-                                <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                                <li class="list-group-item">Model: </li>
-                                <li class="list-group-item">Year: </li>
-                            </ul>
-                            <div class="product-btn-wrap">
-                                <button class="product-btn">MAKE OFFER</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card col-md-3" style="width: 23em;">
-                        <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <a href="#">
-                                <h3 class="card-title">Ime mašine</h3>
-                            </a>
-                            <ul class="list-group list-group-flush" id="product-info">
-                                <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                                <li class="list-group-item">Model: </li>
-                                <li class="list-group-item">Year: </li>
-                            </ul>
-                            <div class="product-btn-wrap">
-                                <button class="product-btn">MAKE OFFER</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card col-md-3" style="width: 23em;">
-                        <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <a href="#">
-                                <h3 class="card-title">Ime mašine</h3>
-                            </a>
-                            <ul class="list-group list-group-flush" id="product-info">
-                                <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                                <li class="list-group-item">Model: </li>
-                                <li class="list-group-item">Year: </li>
-                            </ul>
-                            <div class="product-btn-wrap">
-                                <button class="product-btn">MAKE OFFER</button>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
                 </div>
+
+                <div class="card col-md-3" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-md-3" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card col-md-3" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>

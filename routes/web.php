@@ -71,5 +71,6 @@ Route::get('/machine/{machineiD}', 'uixController@showMachine');
 
 //Index routes
 Route::get('/indexDesign', 'productController@indexDesign');
+Route::get('/productInfo/{machineID}', 'productController@showMachineInfo');
 
 Route::get('/products', 'productController@productPage');

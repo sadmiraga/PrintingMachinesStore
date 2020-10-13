@@ -34,8 +34,8 @@
         <img class="logo" id="logoID" src="images/logoBlack.png" alt="logo">
         <nav>
             <ul class="nav-links">
-                <li class="navbar-li"><a id="home" href="#">Home</a></li>
-                <li class="navbar-li"><a id="equipment" href="#">Equipment</a></li>
+                <li class="navbar-li"><a id="home" href="/indexDesign">Home</a></li>
+                <li class="navbar-li"><a id="equipment" href="/products">Equipment</a></li>
                 <li class="navbar-li"><a id="about" href="#">About</a></li>
                 <a href="#"><button id="navbar-buttonID">Contact</button></a>
                 <div class="dropdown">
