@@ -25,6 +25,7 @@ Route::get('/design', 'productController@design');
 
 Route::get('/admin', 'adminController@index');
 
+Route::get('/adminLayout', 'productController@adminPanelLayout');
 
 
 //ajax routes

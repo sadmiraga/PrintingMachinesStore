@@ -241,7 +241,7 @@
         </div>
         <div class="mobile-nav-wrap-outter">
             <div class="mobile-nav-wrap-inner">
-                <img class="logo" id="logoID" src="images/logoWhite.png" alt="logo">
+                <img class="logo" id="logoID" src="images/logoWhiteCenter.png" alt="logo">
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
             </div>
         </div>

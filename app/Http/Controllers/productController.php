@@ -28,4 +28,8 @@ class productController extends Controller
         $subCategories = subCategory::all();
         return view( 'userExperience.productPage' )->with( 'categories', $categories )->with( 'subCategories', $subCategories );
     }
+
+    public function adminPanelLayout() {
+        return view( 'layouts.adminPanelLayout' );
+    }
 }

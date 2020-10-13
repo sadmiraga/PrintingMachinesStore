@@ -13949,6 +13949,10 @@ a.text-dark:focus {
   padding: 0;
 }
 
+body {
+  font-family: "Montserrat" sans-serif;
+}
+
 li,
 .home,
 .equipment,
@@ -15071,6 +15075,56 @@ input#search-bar:focus:-ms-placeholder {
 @media screen and (max-width: 1200px) {
   products {
     display: block;
+  }
+}
+
+body {
+  font-family: "Montserrat" sans-serif;
+}
+
+.sidenav {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3ca7c2;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #cfdb65;
+  text-decoration: none;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
   }
 }
 
