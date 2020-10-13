@@ -33,29 +33,84 @@
             </div>
         </div>
         <hr>
-        <div class="panel-group" id="accordion">
+        <div class="product-wrap">
+            <div class="panel-group" id="accordion">
 
-            @foreach($categories as $category)
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                            {{$category->name}}</a>
-                    </h4>
+                @foreach($categories as $category)
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                {{$category->name}}</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</div>
+                    </div>
                 </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.</div>
-                </div>
+                @endforeach
             </div>
-            @endforeach
             <div class="product">
+                <div class="card" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 23em;">
+                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <a href="#">
+                            <h3 class="card-title">Ime mašine</h3>
+                        </a>
+                        <ul class="list-group list-group-flush" id="product-info">
+                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
+                            <li class="list-group-item">Model: </li>
+                            <li class="list-group-item">Year: </li>
+                        </ul>
+                        <div class="product-btn-wrap">
+                            <button class="product-btn">MAKE OFFER</button>
+
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
     </div>
-</div>
 
-@endsection
+    @endsection
