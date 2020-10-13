@@ -2,14 +2,21 @@
 
 @section('content')
 
+<script>
+function submitForm() {
+    document.getElementById("searchForm").submit();
+}
+</script>
 
 <div class="content">
     <div class="search-container-warp">
-        <form class="search-container">
-            <input type="text" id="search-bar" placeholder="Search..">
-            <a href="#"><img class="search-icon"
-                    src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-        </form>
+        {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
+        'class'=>'search-container', 'id'=>'searchForm']) !!}
+
+        <input name="query" type="text" id="search-bar" placeholder="Search..">
+        <a onclick="submitForm()" href="#"><img class="search-icon"
+                src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        {{ Form::close() }}
     </div>
 
     <div class="products">
@@ -53,86 +60,51 @@
                 </div>
                 @endforeach
             </div>
-            <div class="container">
 
+            <div class='container-fluid'>
+                <div class='row'>
+                    @foreach($machines as $machine)
 
-                <div class="card col-md-3" style="width: 23em;">
-                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="#">
-                            <h3 class="card-title">Ime mašine</h3>
-                        </a>
-                        <ul class="list-group list-group-flush" id="product-info">
-                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                            <li class="list-group-item">Model: </li>
-                            <li class="list-group-item">Year: </li>
-                        </ul>
-                        <div class="product-btn-wrap">
-                            <button class="product-btn">MAKE OFFER</button>
+                    <?php
+                            //get first image for machine
+                            foreach($pictures as $picture){
+                                if($picture->machineID == $machine->id){
+                                    $image = $picture;
+                                break;
+                                }
+                            }
+                        ?>
 
+                    <div onclick="window.location.href='/productInfo/{{$machine->id}}'" id="productCard"
+                        class="card col-md-3" style="width: 18rem;">
+                        <img class="categories-img" style="object-fit: cover;" height="200" width="500"
+                            src="images\machines\{{$image->image}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$machine->name}}</h5>
+                            <p class="card-text">
+                                year: {{$machine->year}} <br>
+                                manufacturer: {{$machine->manufacturer}} <br>
+                                model: {{$machine->model}}
+                            </p>
+
+                            <button class="makeOfferButton"> make offer </button>
                         </div>
                     </div>
+
+
+                    @endforeach
                 </div>
-
-                <div class="card col-md-3" style="width: 23em;">
-                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="#">
-                            <h3 class="card-title">Ime mašine</h3>
-                        </a>
-                        <ul class="list-group list-group-flush" id="product-info">
-                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                            <li class="list-group-item">Model: </li>
-                            <li class="list-group-item">Year: </li>
-                        </ul>
-                        <div class="product-btn-wrap">
-                            <button class="product-btn">MAKE OFFER</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card col-md-3" style="width: 23em;">
-                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="#">
-                            <h3 class="card-title">Ime mašine</h3>
-                        </a>
-                        <ul class="list-group list-group-flush" id="product-info">
-                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                            <li class="list-group-item">Model: </li>
-                            <li class="list-group-item">Year: </li>
-                        </ul>
-                        <div class="product-btn-wrap">
-                            <button class="product-btn">MAKE OFFER</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card col-md-3" style="width: 23em;">
-                    <img class="card-img-top" src="images/machines/testmachine.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <a href="#">
-                            <h3 class="card-title">Ime mašine</h3>
-                        </a>
-                        <ul class="list-group list-group-flush" id="product-info">
-                            <li class="list-group-item">Manufacturer: asdasdasdasdasdasdasdasda </li>
-                            <li class="list-group-item">Model: </li>
-                            <li class="list-group-item">Year: </li>
-                        </ul>
-                        <div class="product-btn-wrap">
-                            <button class="product-btn">MAKE OFFER</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
             </div>
+
         </div>
     </div>
+
+    <!-- pages -->
+    <div class="d-flex">
+        <div class="mx-auto">
+            {{$machines->links()}}
+        </div>
+    </div>
+
 
     @endsection
