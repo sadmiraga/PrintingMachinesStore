@@ -18,6 +18,11 @@ li,
     text-decoration: none;
 }
 
+#overlay {
+    position: absolute;
+    /* color with alpha transparency */
+    background-color: rgba(0, 0, 0, 0.3);
+}
 header {
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -216,16 +221,81 @@ header {
 .footer-social i:hover {
     color: #f8d567 !important;
 }
-
-label {
-    margin: 50px 40px 0 0;
-    font-size: 25px;
-    line-height: 70px;
+.mobile-nav {
     display: none;
+    background-color: #6aabc1;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    justify-content: flex-end;
+    overflow: visible;
+    padding: 2px 5%; /* Large padding which will shrink on scroll (using JS) */
+    transition: 400ms; /* Adds a transition effect when the padding is decreased */
+    position: fixed; /* Sticky/fixed navbar */
+    width: 100%;
+    top: 0; /* At the top */
+    z-index: 99;
 }
 
-#toggle {
-    display: none;
+/* The sidepanel menu */
+.sidepanel {
+    height: 100%;
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    color: #105561;
+    background-color: white; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #6aabc1;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+    color: #6aabc1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidepanel-languages {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidepanel-language {
+    padding: 0 !important;
+    font-size: 1rem !important;
+}
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+    background-color: #6aabc1;
+    cursor: pointer;
+    font-size: 50px;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.mobile-nav-wrap-inner {
+    display: flex;
+    justify-content: space-between;
 }
 
 @media only screen and (max-width: 930px) {
@@ -241,21 +311,29 @@ label {
         padding-top: 10px;
         padding-left: 0%;
     }
-}
 
-@media only screen and (max-width: 768px) {
-    label {
-        display: block;
-        cursor: pointer;
-    }
-
-    .nav-links {
-        text-align: center;
-        width: 100%;
+    #navbarID {
         display: none;
     }
 
-    #toggle:checked + .nav-links {
+    .mobile-nav {
         display: block;
+    }
+
+    .dropdown {
+        padding-top: 15px;
+        display: inline-block;
+        padding-left: 15px;
+        max-width: 10px !important;
+        overflow: visible;
+    }
+    .dropdown-content a {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding: 50px 10%;
     }
 }

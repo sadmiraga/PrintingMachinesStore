@@ -8,7 +8,7 @@
 <div class="hero-image">
     <h1>
         <p class="typewrite" data-period="2000"
-            data-type='[ "NK MACHINES ARE HERE FOR YOU", "FIND BEST DEALS", "SOME TEXT", "MORE TEXT" ]'>
+            data-type='[ "NK MACHINES ARE HERE FOR YOU", "FIND BEST DEALS", "WE ARE OFFERING BEST MACHINES"]'>
             <span class="wrap"></span>
         </p>
     </h1>
@@ -111,8 +111,8 @@ window.onload = function() {
     <div class="content-text">
         <div class="contact-container" data-aos="fade-right">
             <i class="fa fa-mobile" aria-hidden="true" style="font-size: 100px; color: #105561;" id="mobile"></i>
-            <p class="number">+386 69 100 200</p>
-            <p class="mail">mail@gmail.com</p>
+            <p class="number">+386 31 790 586</p>
+            <p class="mail">nk.graphicmachines@gmail.com</p>
         </div>
         <div class="text-container" data-aos="zoom-in">
             <p class="text-container-h1">

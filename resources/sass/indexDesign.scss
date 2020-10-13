@@ -238,7 +238,7 @@ html {
     max-height: 500px;
     width: 100%;
     margin-right: auto;
-    padding-left: 20%;
+    padding-left: 15%;
 }
 
 #categories-col {
@@ -300,7 +300,7 @@ html {
     padding: 5px 25px;
     color: white;
     background-color: #0087a900;
-    outline: 3px solid #f0c332;
+    border: 3px solid #f0c332;
     transition: 500ms ease 0s;
 }
 
@@ -309,10 +309,11 @@ html {
 }
 
 .content-contact {
-    padding-left: 20%;
-    padding-right: 20%;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 5%;
     padding-bottom: 5%;
+    max-width: 1200px;
 }
 
 .container-contact {
@@ -445,6 +446,10 @@ html {
     .contact-button-div {
         padding: 0;
     }
+
+    .contact-container .mail {
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -454,8 +459,12 @@ html {
         min-height: 450px;
     }
 
-    .contact-container p {
+    .contact-container .number {
         font-size: 1.5rem;
+    }
+
+    .contact-container .mail {
+        font-size: 1.2rem;
     }
     .text-container {
         padding-left: 0;
@@ -476,5 +485,11 @@ html {
     .text-contact h1 {
         font-size: 1.1rem;
         font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 310px) {
+    .contact-container .mail {
+        font-size: 1rem;
     }
 }

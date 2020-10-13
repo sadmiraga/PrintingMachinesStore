@@ -17,10 +17,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="mainLayout.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -35,22 +33,22 @@
     <header id="navbarID">
         <img class="logo" id="logoID" src="images/logoBlack.png" alt="logo">
         <nav>
-            <label for="toggle">&#9776;</label>
-            <input type="checkbox" id="toggle" />
             <ul class="nav-links">
                 <li class="navbar-li"><a id="home" href="#">Home</a></li>
                 <li class="navbar-li"><a id="equipment" href="#">Equipment</a></li>
                 <li class="navbar-li"><a id="about" href="#">About</a></li>
+                <a href="#"><button id="navbar-buttonID">Contact</button></a>
+                <div class="dropdown">
+                    <p class="language">English(EN)</p>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Slovenian(SL)</a></li>
+                        <li><a href="#">German(GE)</a></li>
+                        <li><a href="#">French(FR)</a></li>
+                </div>
             </ul>
         </nav>
-        <a href="#"><button id="navbar-buttonID">Contact</button></a>
-        <div class="dropdown">
-            <p class="language">English(EN)</p>
-            <ul class="dropdown-content">
-                <li><a href="#">Slovenian(SL)</a></li>
-                <li><a href="#">German(GE)</a></li>
-                <li><a href="#">French(FR)</a></li>
-        </div>
+
+
 
         <!--Navbar script -->
         <script>
@@ -226,6 +224,39 @@
         </script>
 
     </header>
+    <div class="mobile-nav">
+        <div id="mySidepanel" class="sidepanel">
+            <a href="#">Home</a>
+            <a href="#">Equipment</a>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <div class="dropdown">
+                <p class="language">English(EN)</p>
+                <ul class="dropdown-content">
+                    <li><a href="#">Slovenian(SL)</a></li>
+                    <li><a href="#">German(GE)</a></li>
+                    <li><a href="#">French(FR)</a></li>
+            </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <div class="mobile-nav-wrap-outter">
+            <div class="mobile-nav-wrap-inner">
+                <img class="logo" id="logoID" src="images/logoWhite.png" alt="logo">
+                <button class="openbtn" onclick="openNav()">&#9776;</button>
+            </div>
+        </div>
+        <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "50%";
+        }
+
+        /* Set the width of the sidebar to 0 (hide it) */
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+        </script>
+    </div>
+
 
     @yield('content')
 
@@ -238,7 +269,7 @@
                         <h3>CONTACT</h3>
                     </li>
                     <li class="footer-li">
-                        <h3 class="contact-number">+386 069 100 200</h3>
+                        <h3 class="contact-number">+386 31 790 586</h3>
                     </li>
                 </ul>
             </div>
@@ -268,7 +299,6 @@
         duration: 1200,
     })
     </script>
-
 </body>
 
 </html>
