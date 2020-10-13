@@ -1,6 +1,4 @@
-@extends('layouts.mainLayout')
 
-@section('content')
 
 
 {!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
@@ -183,4 +181,3 @@ if(categoryID){
 
 
 
-@endsection

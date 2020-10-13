@@ -14840,7 +14840,7 @@ header {
 }
 
 .content {
-  padding-top: 13.3vh;
+  padding-top: 9%;
 }
 
 .search-container {
@@ -15065,6 +15065,22 @@ input#search-bar:focus:-ms-placeholder {
   background-color: #f8d567;
   padding: 5px 20px;
   color: white;
+  border: none;
+}
+
+#productCard {
+  margin-right: 4%;
+  margin-left: 4%;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 4%;
+}
+
+.makeOfferButton {
+  color: white;
+  background-color: #f0c332;
+  padding: 5px 25px;
   border: none;
 }
 
