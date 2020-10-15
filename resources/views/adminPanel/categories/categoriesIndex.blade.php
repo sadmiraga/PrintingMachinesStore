@@ -1,7 +1,7 @@
-@extends('layouts.adminPanelLayout')
+@extends('layouts.mainLayout')
 @section('content')
 
-<div id="formDiv">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 {!! Form::open(['url'=>'/addCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 
@@ -11,18 +11,15 @@
 <br>
 
 
-<label class="machineLabel"> Vnesite sliko kategorije </label>
-<input id="adminPanelTextInput" id="categoryImage"  type="file" class="form-control" name="categoryImage">
+<label> Vnesite sliko kategorije </label>
+<input id="categoryImage"  type="file" class="form-control" name="categoryImage">
+<br>
 
 
-{!! Form::submit('Dodaj',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
+{!! Form::submit('Dodaj',['class'=>'btn btn-success']) !!}
+
 
 {!! Form::close() !!}
-
-<br> <br>
-
-<hr>
-<br> <br><br>
 
 
 <table  class="table">
@@ -51,7 +48,5 @@
 
     </tbody>
   </table>
-
-</div>
 
 @endsection

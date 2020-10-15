@@ -1,7 +1,7 @@
-@extends('layouts.adminPanelLayout')
+@extends('layouts.mainLayout')
 @section('content')
 
-<div id="formDiv">
+<br><br><br><br><br><br><br>
 
 {!! Form::open(['url'=>'/updateMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 @csrf
@@ -25,16 +25,16 @@
 
 <!-- YEAR -->
 @if($machine->year != 0)
-    <label class="machineLabel"> Letnik masine </label>
-    {!! Form::input('number', 'year', $machine->year, ['class' => 'form-control','required'=>'required','id'=>'adminPanelTextInput']) !!}
+    <label> Letnik masine </label> <br>
+    {{Form::number('year', $machine->year)}}
     <br>
 @endif
 
 
 <!-- NUMBER OF COLORS -->
 @if($machine->numberOfColors != 0)
-    <label class="machineLabel"> število barv</label>
-    {!! Form::input('number', 'numberOfColors', $machine->numberOfColors, ['class' => 'form-control','required'=>'required','id'=>'adminPanelTextInput']) !!}
+    <label> število barv</label>
+    {{Form::number('numberOfColors', $machine->numberOfColors)}}
     <br>
 @endif
 
@@ -44,7 +44,7 @@
 
 
 <!-- CONDITION -->
-<select class="form-control" id="adminPanelTextInput"  name="condition" >
+<select class="form-control"  name="condition" >
      @if($machine->condition == 'new')
         <option value="new" selected > new </option>
         <option value="used"> used </option>
@@ -66,17 +66,17 @@
 @endif
 
 @if($machine->impresions != null || $machine->impresions == 0)
-    <label class="machineLabel">Impresions</label>
-    {!! Form::input('number', 'impresions', $machine->impresions, ['class' => 'form-control','id'=>'adminPanelTextInput']) !!}
+    <label>Impresions</label>
+    {{Form::number('impresions', $machine->impresions)}}
     <br>
 @endif
 
-<label class="machineLabel">Price</label>
-{!! Form::input('number', 'price', $machine->price, ['class' => 'form-control','id'=>'adminPanelTextInput','required'=>'required']) !!}
+<label>Price</label>
+{!! Form::input('number', 'price', $machine->price, ['class' => 'form-control','required'=>'required']) !!}
 
 
 <!-- KATEGORIJA -->
-<label class="machineLabel">Izberite Kategorijo</label>
+<label>Izberite Kategorijo</label>
 <select class="form-control"  name="categoryID" id="categoryID">
     <option value="0" selected disabled> Izberite kategorijo </option>
     @foreach ( $categories as $category)
@@ -92,7 +92,7 @@
 <!-- POD KATEGORIJA -->
 <br> <br>
 
-<label class="machineLabel" id="labelForSubCategory" >Izberite pod kategorijo</label>
+<label id="labelForSubCategory" >Izberite pod kategorijo</label>
 <select class="form-control" name="subCategoryID" id="subCategoryID" >
     <option value="0" selected disabled> Izberite pod kategorijo </option>
     @foreach ( $subCategories as $subCategory)
@@ -106,7 +106,7 @@
 
 
 
-{!! Form::submit('Shrani',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
+{!! Form::submit('Shrani',['class'=>'btn btn-success']) !!}
 {!! Form::close() !!}
 
 
@@ -154,6 +154,6 @@ if(categoryID){
 </script>
 
 
-</div>
+
 
 @endsection

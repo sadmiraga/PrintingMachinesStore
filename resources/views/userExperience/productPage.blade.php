@@ -8,8 +8,6 @@ function submitForm() {
 }
 </script>
 
-<script src=//www.codermen.com/js/jquery.js></script>
-
 <div class="content">
     <div class="search-container-warp">
         {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
@@ -22,43 +20,46 @@ function submitForm() {
     </div>
 
     <div class="products">
-
-
-
-                {!! Form::open(['url'=>'/filterMachines', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
-
-
-                    <select class="form-control" name="sortFilter" class="dropdown">
-
-                            <option value="0" selected > Sort By </option>
-                            <option value="1"> Price: lowest </option>
-                            <option value="2"> Price: highest </option>
-                            <option value="3"> Date: oldest </option>
-                            <option value="4"> Date: newest </option>
-
-
-                    </select>
-
-
-
-                    <select  class="form-control"  name="categoryID" id="categoryID">
-                        <option value="0" selected > Izberite kategorijo </option>
-                        @foreach ( $categories as $category)
-                            <option value="{{$category->id}}"> {{$category->name}} </option>
-                        @endforeach
-                    </select>
-
-                    <select  class="form-control" name="subCategoryID" id="subCategoryID" >
-                        <option value="0" selected > Izberite pod kategorijo </option>
-                    </select>
-
-                    {!! Form::submit('Apply',['class'=>'btn btn-success']) !!}
-                {!! Form::close() !!}
-
-
+        <div class="info-sort">
+            <div class="category-name">
+                <h2>Category<h2 class="category-counter">[100]</h2>
+                </h2>
+            </div>
+            <div class="sort">
+                <p>Sort by:</p>
+                <div class="dropdown">
+                    <button class="dropdownbtn">Date: newest
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Price: highest</a>
+                        <a href="#">Date: lowest</a>
+                        <a href="#">Date: oldest</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <hr>
         <div class="product-wrap">
+            <div class="panel-group" id="accordion">
 
+                @foreach($categories as $category)
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                {{$category->name}}</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
 
             <div class='container-fluid'>
                 <div class='row'>
@@ -105,49 +106,5 @@ function submitForm() {
         </div>
     </div>
 
-    <!--script function -->
-<script>
-    //dynamic oblika field
-    $('#categoryID').change(function(){
-var categoryID = $(this).val();
-if(categoryID){
-    $.ajax({
-    type:"GET",
-    url:"{{url('getSubCategories')}}?categoryID="+categoryID,
-    success:function(res){
-    if(res){
-
-        var numberOfSubCategories = 0;
-
-        $("#subCategoryID").empty();
-        $("#subCategoryID").append('<option value="0">Select</option>');
-        $.each(res,function(key,value){
-            numberOfSubCategories++;
-        $("#subCategoryID").append('<option value="'+key+'">'+value+'</option>');
-        });
-
-        //make second dropdown invisible if array is empty
-        if(numberOfSubCategories == 0){
-            document.getElementById("subCategoryID").style.visibility = "hidden";
-
-        } else if(numberOfSubCategories > 0){
-            document.getElementById("subCategoryID").style.visibility = "visible";
-
-        }
-    }else{
-        $("#subCategoryID").empty();
-    }
-    }
-    });
-}else{
-    $("#subCategoryID").empty();
-
-}
-});
-</script>
-
-
 
     @endsection
-
-
