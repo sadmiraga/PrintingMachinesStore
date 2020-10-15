@@ -36,9 +36,9 @@
     <div id="mySidenav" class="sidenav">
 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Mašine</a>
-        <a href="#">Kategorije</a>
-        <a href="#">Podkategorije</a>
+        <a href="{{route('machines')}}">Mašine</a>
+        <a href="{{route('categories')}}">Kategorije</a>
+        <a href="{{route('subcategories')}}">Podkategorije</a>
     </div>
 
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -48,10 +48,17 @@
     <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "300px";
+        document.getElementById("formDiv").style.width = "75%";
+        document.getElementById("formDiv").style.marginRight = "300px";
+
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("formDiv").style.width = "100%";
+        document.getElementById("formDiv").style.marginRight = "0";
+
+
     }
     </script>
 
