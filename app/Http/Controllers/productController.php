@@ -38,3 +38,4 @@ class productController extends Controller
  {
         return view( 'userExperience.showProductInfo' );
     }
+}
