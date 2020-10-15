@@ -1,25 +1,22 @@
 @extends('layouts.adminPanelLayout')
 @section('content')
 
-<div class="formDiv">
+<div class="adminContainer">
+<div id="formDiv">
 
     {!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data', 'class'=>'form-horizontal']) !!}
     @csrf
 
 
-    <div class="rowFormElements">
-        {!!Form::text('machineName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Input machine Name', 'required'=>'required'])!!}
+        <label class="machineLabel"> Obvezno * </label>
+        {!!Form::text('machineName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime mašine', 'required'=>'required'])!!}
 
 
         {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
 
-
+        <label class="machineLabel"> Obvezno * </label>
         {!!Form::text('manufacturer','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite proizvajalca masine'])!!}
 
-    </div>
-
-
-    <div class="rowFormElements">
 
         {!!Form::text('stockNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Stock Number'])!!}
 
@@ -28,42 +25,52 @@
 
         {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial Number'])!!}
 
-    </div>
 
-        <label> število barv</label> <br>
-        {{Form::number('numberOfColors', 0)}}
-    <label> Vnesite slike za mašino </label> <br>
-    <input placeholder="vnesite slike masine"  type="file" name="files[]" multiple >
 
-    {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet size'])!!}
 
-    <select class="form-control"  name="condition" >
-        <option value="new" selected > new </option>
-        <option value="used"> used </option>
-    </select>
 
-    <label> Letnik masine </label> <br>
-    {{Form::number('year', '')}}
+        <label class="machineLabel"> število barv</label>
+        {!!  Form::input('number', 'numberOfColors', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' => 1, 'max' => 99999]) !!}
+
+
+
+        <label class="machineLabel"> Vnesite slike za mašino </label>
+        <input id="adminPanelTextInput" placeholder="vnesite slike masine"  type="file" name="files[]" multiple >
+
+        {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet size'])!!}
+
+        <label class="machineLabel"> stanje</label>
+        <select id="adminPanelTextInput" class="form-control"  name="condition" >
+            <option value="new" selected > Novo </option>
+            <option value="used"> Koristeno </option>
+        </select>
+
+    <label class="machineLabel"> Letnik masine </label>
+
+
+    {!!  Form::input('number', 'year', 2020, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' => 1800, 'max' => 2020]) !!}
 
 
 
     {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial Number'])!!}
 
 
-    <label>Impresions</label>
-    {{Form::number('impresions', 0)}}
+    <label class="machineLabel">Impresions</label>
+    {!!  Form::input('number', 'impresions', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' => 1]) !!}
+
+
+
+
+    <label class="machineLabel">Cena (€) - obvezno *</label>
+
+    {!! Form::input('number', 'price', null, ['class' => 'form-control','required'=>'required','id'=>'adminPanelTextInput']) !!}
     <br>
 
-    <label>Price</label>
-
-    {!! Form::input('number', 'price', null, ['class' => 'form-control','required'=>'required']) !!}
-    <br>
-
-    {!! Form::textarea('description', null, [ 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','placeholder'=>'Vpišite opis mašine', 'required'=>'required']) !!}
+    {!! Form::textarea('description', null, [ 'rows' => 4, 'cols' => 54, 'style' => 'resize:none','placeholder'=>'Vpišite opis mašine', 'required'=>'required','id'=>'adminPanelTextInput']) !!}
     <br> <br>
 
-    <label>Izberite Kategorijo</label>
-    <select class="form-control"  name="categoryID" id="categoryID">
+    <label class="machineLabel">Izberite Kategorijo</label>
+    <select id="adminPanelTextInput" class="form-control"  name="categoryID" id="categoryID">
         <option value="0" selected disabled> Izberite kategorijo </option>
         @foreach ( $categories as $category)
             <option value="{{$category->id}}"> {{$category->name}} </option>
@@ -72,17 +79,18 @@
 
     <br> <br> <br>
 
-    <label id="labelForSubCategory" >Izberite pod kategorijo</label>
-    <select class="form-control" name="subCategoryID" id="subCategoryID" >
+    <label class="machineLabel" id="labelForSubCategory" >Izberite pod kategorijo</label>
+    <select id="adminPanelTextInput" class="form-control" name="subCategoryID" id="subCategoryID" >
         <option value="0" selected disabled> Izberite pod kategorijo </option>
     </select>
 
             <!-- ajax -->
             <script src=//www.codermen.com/js/jquery.js></script>
 
-    {!! Form::submit('Dodaj',['class'=>'btn btn-success']) !!}
+    {!! Form::submit('Dodaj',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
     {!! Form::close() !!}
 
+</div>
 </div>
 
 

@@ -1,12 +1,13 @@
-.formDiv {
+#formDiv {
     width: 75%;
     margin-left: 300px;
 }
 
 #adminPanelTextInput {
-    width: 20%;
-    margin-right: 3%;
-    margin-left: 3%;
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 3%;
 }
 
 .rowFormElements {
@@ -14,6 +15,21 @@
     margin-bottom: 5%;
 }
 
-.inputWithText {
-    display: block;
+.machineLabel {
+    text-align: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    width: 10%;
+}
+
+.adminContainer {
+    width: 100%;
+}
+
+#categoryID,
+#subCategoryID {
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-bottom: 3%;
 }
