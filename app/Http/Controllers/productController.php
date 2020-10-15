@@ -36,6 +36,6 @@ class productController extends Controller
 
     public function showMachineInfo( $machineID )
  {
-        return view( 'userExperience.showProductInfo' );
+        return 'eto ti kurac';
     }
 }

@@ -31,7 +31,7 @@
 
     <!-- Navbar -->
     <header id="navbarID">
-        <img class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">
+        <img class="logo" id="logoID" src="images/logoBlack.png" alt="logo">
         <nav>
             <ul class="nav-links">
                 <li class="navbar-li"><a id="home" href="/indexDesign">Home</a></li>
