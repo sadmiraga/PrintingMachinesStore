@@ -65,12 +65,13 @@ Route::post('/addImageToMachine', 'pictureController@addImageToMachine');
 
 //search rutes
 Route::post('/search', 'searchController@machineSearch');
+Route::post('/filterMachines', 'searchController@filterMachines');
 
 //USER exeperience routes
 Route::get('/machine/{machineiD}', 'uixController@showMachine');
 
 //Index routes
-Route::get('/indexDesign', 'productController@indexDesign');
+Route::get('/index', 'productController@indexDesign');
 Route::get('/productInfo/{machineID}', 'productController@showMachineInfo');
 
 Route::get('/products', 'productController@productPage');

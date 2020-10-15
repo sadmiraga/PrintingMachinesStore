@@ -21,7 +21,7 @@
         {!!Form::text('stockNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Stock Number'])!!}
 
 
-        {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet size'])!!}
+
 
         {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial Number'])!!}
 
@@ -70,7 +70,7 @@
     <br> <br>
 
     <label class="machineLabel">Izberite Kategorijo</label>
-    <select id="adminPanelTextInput" class="form-control"  name="categoryID" id="categoryID">
+    <select  class="form-control"  name="categoryID" id="categoryID">
         <option value="0" selected disabled> Izberite kategorijo </option>
         @foreach ( $categories as $category)
             <option value="{{$category->id}}"> {{$category->name}} </option>
@@ -80,7 +80,7 @@
     <br> <br> <br>
 
     <label class="machineLabel" id="labelForSubCategory" >Izberite pod kategorijo</label>
-    <select id="adminPanelTextInput" class="form-control" name="subCategoryID" id="subCategoryID" >
+    <select  class="form-control" name="subCategoryID" id="subCategoryID" >
         <option value="0" selected disabled> Izberite pod kategorijo </option>
     </select>
 
@@ -162,11 +162,7 @@
     </tbody>
   </table>
 
-
-@endsection
-
-
-<!--script function -->
+  <!--script function -->
 <script>
     //dynamic oblika field
     $('#categoryID').change(function(){
@@ -206,3 +202,9 @@ if(categoryID){
 }
 });
 </script>
+
+
+
+@endsection
+
+
