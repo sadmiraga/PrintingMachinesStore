@@ -1,5 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.adminPanelLayout')
 @section('content')
+
+<div id="formDiv">
 
 {!! Form::open(['url'=>'/updateCategory', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 @csrf
@@ -8,17 +10,17 @@
 <br>
 
 
-<label style="color:white;"> Vnesite novo sliko za kategorijo </label>
-<input id="categoryImage"  type="file" class="form-control" name="categoryImage">
+<label class="machineLabel"> Vnesite novo sliko za kategorijo </label>
+<input style="width: 50%; margin-right: 25%; margin-left: 25%; margin-bottom: 3%;" id="categoryImage"  type="file" class="form-control" name="categoryImage">
 <br>
 
 <input name="categoryID" type="hidden" value="{{$category->id}}">
 
-{!! Form::submit('Shrani',['class'=>'btn btn-success']) !!}
+{!! Form::submit('Shrani',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
 
 
 {!! Form::close() !!}
 
-
+</div>
 
 @endsection

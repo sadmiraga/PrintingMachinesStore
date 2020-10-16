@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
+@extends('layouts.adminPanelLayout')
 @section('content')
+<div id="formDiv">
 
 {!! Form::open(['url'=>'/updateSubCategory', 'method'=> 'post']) !!}
 @csrf
@@ -23,9 +23,10 @@
 
 <input name="subCategoryID" type="hidden" value="{{$subCategory->id}}">
 
-{!! Form::submit('Shrani',['class'=>'btn btn-success']) !!}
+{!! Form::submit('Shrani',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
 
 {!! Form::close() !!}
 
+</div>
 
 @endsection

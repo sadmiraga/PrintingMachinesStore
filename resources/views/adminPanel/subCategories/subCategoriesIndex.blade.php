@@ -1,15 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.adminPanelLayout')
 @section('content')
-
+<div id="formDiv">
 
 
 {!! Form::open(['url'=>'/addSubCategory', 'method'=> 'post']) !!}
 @csrf
 
-
+<br> <br>
 
 {!!Form::text('subCategoryName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime podkategorije','required'=>'required'])!!}
 
+
+<label class="machineLabel">Izberite kategorijo kateri potkategorija pripada </label>
 <select class="form-control"  name="categoryID" id="categoryID">
     <option value="0" selected disabled> Izberite kategorijo </option>
     @foreach ( $categories as $category)
@@ -17,7 +19,7 @@
     @endforeach
 </select>
 
-{!! Form::submit('Dodaj',['class'=>'btn btn-success']) !!}
+{!! Form::submit('Dodaj',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
 
 {!! Form::close() !!}
 
@@ -54,7 +56,7 @@
     </tbody>
   </table>
 
-
+</div>
 
 
 @endsection
