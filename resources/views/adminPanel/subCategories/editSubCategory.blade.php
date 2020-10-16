@@ -1,8 +1,6 @@
-@extends('layouts.adminPanelLayout')
+@extends('layouts.app')
 
 @section('content')
-
-<div id="formDiv">
 
 {!! Form::open(['url'=>'/updateSubCategory', 'method'=> 'post']) !!}
 @csrf
@@ -10,7 +8,7 @@
 {!!Form::text('subCategoryName',$subCategory->name,['class'=>'form-control','id'=>'adminPanelTextInput','required'=>'required'])!!}
 
 
-<label class="machineLabel"> Izberite novo kategorijo </label>
+
 <select class="form-control"  name="categoryID" id="categoryID">
     <option value="0" selected disabled> Izberite kategorijo </option>
     @foreach ( $categories as $category)
@@ -25,10 +23,9 @@
 
 <input name="subCategoryID" type="hidden" value="{{$subCategory->id}}">
 
-{!! Form::submit('Shrani',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
+{!! Form::submit('Shrani',['class'=>'btn btn-success']) !!}
 
 {!! Form::close() !!}
 
-</div>
 
 @endsection
