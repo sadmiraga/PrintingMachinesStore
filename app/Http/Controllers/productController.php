@@ -39,8 +39,23 @@ class productController extends Controller
         $machine = machine::find($machineID);
         $pictures = picture::where('machineID', $machineID)->get();
 
+        //get category Name for product
+        $category = category::find($machine->categoryID);
+        $categoryName = $category->name;
 
-        return view('userExperience.showProductInfo')->with('machine', $machine)->with('pictures', $pictures);
+        //get subCategory nane for product
+
+        if ($machine->subCategoryID != null) {
+            $subCategory = subCategory::find($machine->subCategoryID);
+            $subCategoryName = $subCategory->name;
+
+            return view('userExperience.showProductInfo')->with('machine', $machine)->with('pictures', $pictures)
+                ->with('categoryName', $categoryName)->with('subCategoryName', $subCategoryName);
+        }
+
+
+        return view('userExperience.showProductInfo')->with('machine', $machine)->with('pictures', $pictures)
+            ->with('categoryName', $categoryName);
     }
 
     public function contactPage()

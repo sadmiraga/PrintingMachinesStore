@@ -147,7 +147,6 @@ function submitForm() {
 
             } else if(numberOfSubCategories > 0){
                 document.getElementById("subCategoryID").style.visibility = "visible";
-
             }
         }else{
             $("#subCategoryID").empty();

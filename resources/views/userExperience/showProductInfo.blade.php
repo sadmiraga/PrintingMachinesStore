@@ -67,34 +67,55 @@
         <div class="product-info-desc">
             <h1>Description</h1>
             <ul class="product-info-desc-content">
-                <li><p class="product-info-data">Name: {{$machine->name}} </p><p class="product-info-data-desc"></p></li>
+                <li><p class="product-info-data">Name: </p><p class="product-info-data-desc">{{$machine->name}}</p></li>
 
                 @if($machine->model != null)
-                    <li><p class="product-info-data">Model: {{$machine->model}} </p><p class="product-info-data-desc"></p></li>
+                    <li><p class="product-info-data">Model: </p><p class="product-info-data-desc"> {{$machine->model}}</p></li>
                 @endif
 
                 @if($machine->manufacturer != null)
-                <li><p class="product-info-data">Manufacturer: {{$machine->manufacturer}} </p><p class="product-info-data-desc"></p></li>
+                <li><p class="product-info-data">Manufacturer:  </p><p class="product-info-data-desc">{{$machine->manufacturer}}</p></li>
                 @endif
 
                 @if($machine->year != null)
-                <li><p class="product-info-data">year: {{$machine->year}} </p><p class="product-info-data-desc"></p></li>
-            @endif
+                <li><p class="product-info-data">year: </p><p class="product-info-data-desc"> {{$machine->year}}</p></li>
+                @endif
 
-            @if($machine->numberOfColors != null)
-            <li><p class="product-info-data">Number of COlors: {{$machine->numberOfColors}} </p><p class="product-info-data-desc"></p></li>
-        @endif
-
-
-                <li><p class="product-info-data">Condition: {{$machine->condition}} </p><p class="product-info-data-desc"></p></li>
+                @if($machine->numberOfColors != null)
+                <li><p class="product-info-data">Number of Colors:  </p><p class="product-info-data-desc">{{$machine->numberOfColors}}</p></li>
+                @endif
 
 
-                <li><p class="product-info-data">Sheet size: </p><p class="product-info-data-desc"></p></li>
-                <li><p class="product-info-data">Stock number: </p><p class="product-info-data-desc"></p></li>
-                <li><p class="product-info-data">Serial number: </p><p class="product-info-data-desc"></p></li>
-                <li><p class="product-info-data">Impressions: </p><p class="product-info-data-desc"></p></li>
-                <li><p class="product-info-data">Category: </p><p class="product-info-data-desc"></p></li>
-                <li><p class="product-info-data">Description : - </li>
+                <li><p class="product-info-data">Condition: </p><p class="product-info-data-desc">{{$machine->condition}}</p></li>
+
+                @if($machine->sheetSize != null)
+                <li><p class="product-info-data">Sheet size: </p><p class="product-info-data-desc">{{$machine->sheetSize}}</p></li>
+                @endif
+
+                @if($machine->stockNumber != null)
+                <li><p class="product-info-data">Stock Number:  </p><p class="product-info-data-desc">{{$machine->stockNumber}}</p></li>
+                @endif
+
+                @if($machine->serialNumber != null)
+                <li><p class="product-info-data">Serial number:  </p><p class="product-info-data-desc">{{$machine->serialNumber}}</p></li>
+                @endif
+
+
+                @if($machine->impresions != null)
+                <li><p class="product-info-data">impresions:  </p><p class="product-info-data-desc">{{$machine->impresions}}</p></li>
+                @endif
+
+
+                @if($machine->categoryID != null)
+                <li><p class="product-info-data">category:  </p><p class="product-info-data-desc">{{$categoryName}}</p></li>
+                @endif
+
+                @if($machine->subCategoryID != null)
+                <li><p class="product-info-data">subcategory:  </p><p class="product-info-data-desc">{{$subCategoryName}}</p></li>
+                @endif
+
+
+
          </ul>
         </div>
     </div>

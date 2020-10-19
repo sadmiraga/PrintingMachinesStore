@@ -32,7 +32,7 @@
 
 
         <label class="machineLabel"> število barv</label>
-        {!!  Form::input('number', 'numberOfColors', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' => 1, 'max' => 99999]) !!}
+        {!!  Form::input('number', 'numberOfColors', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control']) !!}
 
 
 
@@ -58,7 +58,7 @@
 
 
     <label class="machineLabel">Impresions</label>
-    {!!  Form::input('number', 'impresions', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' => 1]) !!}
+    {!!  Form::input('number', 'impresions', 0, ['id' => 'adminPanelTextInput', 'class' => 'form-control']) !!}
 
 
 

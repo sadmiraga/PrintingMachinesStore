@@ -15315,10 +15315,12 @@ body {
 .product-info-data {
   color: grey;
   font-style: lighter;
+  display: inline;
 }
 
-.product-info-data {
+.product-info-data-desc {
   color: black;
+  display: inline;
 }
 
 .contact-page-hero img {
