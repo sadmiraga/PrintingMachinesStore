@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\picture;
+
 use Illuminate\Support\Facades\Auth;
 
 use function Symfony\Component\String\b;
@@ -68,5 +69,11 @@ class pictureController extends Controller
         }
 
         return redirect("/machineImages/$machineID");
+    }
+
+    public function productGalery($machineID)
+    {
+        $pictures = picture::where('machineID', $machineID)->get();
+        return view('userExperience.productGalery')->with('pictures', $pictures);
     }
 }

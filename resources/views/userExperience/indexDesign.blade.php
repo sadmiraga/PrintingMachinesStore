@@ -15,7 +15,7 @@
     <div class="hero-wrap">
         <div class="hero-search" data-aos="fade-in">
             <p>Find the best deal</p>
-            <div class="container">
+            <div class="search-container">
                 <input type="text" placeholder="Search...">
                 <div class="search"></div>
             </div>

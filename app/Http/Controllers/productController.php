@@ -36,6 +36,15 @@ class productController extends Controller
 
     public function showMachineInfo($machineID)
     {
-        return view('userExperience.showProductInfo');
+        $machine = machine::find($machineID);
+        $pictures = picture::where('machineID', $machineID)->get();
+
+
+        return view('userExperience.showProductInfo')->with('machine', $machine)->with('pictures', $pictures);
+    }
+
+    public function contactPage()
+    {
+        return view('userExperience.contactPage');
     }
 }

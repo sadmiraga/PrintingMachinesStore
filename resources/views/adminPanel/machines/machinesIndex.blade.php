@@ -1,6 +1,8 @@
 @extends('layouts.adminPanelLayout')
 @section('content')
 
+<script src=//www.codermen.com/js/jquery.js></script>
+
 <div class="adminContainer">
 <div id="formDiv">
 
@@ -70,7 +72,7 @@
     <br> <br>
 
     <label class="machineLabel">Izberite Kategorijo</label>
-    <select id="adminPanelTextInput" class="form-control"  name="categoryID" id="categoryID">
+    <select  class="form-control"  name="categoryID" id="categoryID">
         <option value="0" selected disabled> Izberite kategorijo </option>
         @foreach ( $categories as $category)
             <option value="{{$category->id}}"> {{$category->name}} </option>
@@ -80,12 +82,12 @@
     <br> <br> <br>
 
     <label class="machineLabel" id="labelForSubCategory" >Izberite pod kategorijo</label>
-    <select id="adminPanelTextInput" class="form-control" name="subCategoryID" id="subCategoryID" >
+    <select  class="form-control" name="subCategoryID" id="subCategoryID" >
         <option value="0" selected disabled> Izberite pod kategorijo </option>
     </select>
 
-            <!-- ajax -->
-            <script src=//www.codermen.com/js/jquery.js></script>
+
+
 
     {!! Form::submit('Dodaj',['class'=>'btn btn-success', 'id'=>'adminPanelTextInput']) !!}
     {!! Form::close() !!}
@@ -163,10 +165,7 @@
   </table>
 
 
-@endsection
-
-
-<!--script function -->
+  <!--script function -->
 <script>
     //dynamic oblika field
     $('#categoryID').change(function(){
@@ -206,3 +205,9 @@ if(categoryID){
 }
 });
 </script>
+
+
+@endsection
+
+
+
