@@ -59,7 +59,7 @@
                     <p class="make-offer-number">+386 31 790 586</p>
                     <h1>E-mail</h1>
                     <p class="make-offer-email">Mail@gmail.com</p>
-                    <button class="make-offer-btn">MAKE OFFER</button>
+                    <button onclick="window.location.href='/sendMail'" class="make-offer-btn">MAKE OFFER</button>
                 </div>
             </div>
         </div>

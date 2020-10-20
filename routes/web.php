@@ -79,3 +79,5 @@ Route::get('/contact', 'productController@contactPage');
 //product routes
 Route::get('/products', 'productController@productPage');
 Route::get('/productGalery/{machineID}', 'pictureController@productGalery');
+
+Route::get('/sendMail', 'MailController@html_email');

@@ -10,6 +10,11 @@
     cursor: pointer;
     display: block;
     opacity: 0.6;
+    min-width: 123px;
+}
+
+#imageBox {
+    min-width: 670px;
 }
 
 .product-info-gallery {
