@@ -15361,11 +15361,11 @@ body {
 }
 
 .contact-page-hero img {
-  height: 40%;
+  height: 50%;
   width: 100%;
 }
 
-.bg-color {
+body {
   background-color: white;
 }
 
@@ -15506,20 +15506,20 @@ body {
   font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-#contact {
+#contact-form {
   background: #f9f9f9;
   padding: 25px;
   margin: 50px 0;
 }
 
-#contact h3 {
+#contact-form h3 {
   color: #0091ae;
   display: block;
   font-size: 30px;
   font-weight: 400;
 }
 
-#contact h4 {
+#contact-form h4 {
   margin: 5px 0 15px;
   display: block;
   font-size: 13px;
@@ -15533,11 +15533,11 @@ fieldset {
   width: 100%;
 }
 
-#contact input[type=text],
-#contact input[type=email],
-#contact input[type=tel],
-#contact input[type=url],
-#contact textarea {
+#contact-form input[type=text],
+#contact-form input[type=email],
+#contact-form input[type=tel],
+#contact-form input[type=url],
+#contact-form textarea {
   width: 100%;
   border: 1px solid #ccc;
   background: #fff;
@@ -15545,22 +15545,22 @@ fieldset {
   padding: 10px;
 }
 
-#contact input[type=text]:hover,
-#contact input[type=email]:hover,
-#contact input[type=tel]:hover,
-#contact input[type=url]:hover,
-#contact textarea:hover {
+#contact-form input[type=text]:hover,
+#contact-form input[type=email]:hover,
+#contact-form input[type=tel]:hover,
+#contact-form input[type=url]:hover,
+#contact-form textarea:hover {
   transition: border-color 0.3s ease-in-out;
   border: 1px solid #aaa;
 }
 
-#contact textarea {
+#contact-form textarea {
   height: 100px;
   max-width: 100%;
   resize: none;
 }
 
-#contact button[type=submit] {
+#contact-form button[type=submit] {
   cursor: pointer;
   width: 100%;
   border: none;
@@ -15572,18 +15572,18 @@ fieldset {
   font-size: 15px;
 }
 
-#contact button[type=submit]:hover {
+#contact-form button[type=submit]:hover {
   background: white;
   color: #0091ae;
   transition: background-color 0.3s ease-in-out;
 }
 
-#contact button[type=submit]:active {
+#contact-form button[type=submit]:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-#contact input:focus,
-#contact textarea:focus {
+#contact-form input:focus,
+#contact-form textarea:focus {
   outline: 0;
   border: 1px solid #999;
 }
