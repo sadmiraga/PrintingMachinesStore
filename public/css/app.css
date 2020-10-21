@@ -14339,6 +14339,12 @@ header {
   letter-spacing: 0.2rem;
 }
 
+.errorDiv {
+  width: 50%;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
 .hero-wrap {
   position: relative;
   color: white;

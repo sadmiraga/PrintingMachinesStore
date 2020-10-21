@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\category;
 use Illuminate\Support\Facades\File;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class categoriesController extends Controller
@@ -29,10 +29,16 @@ class categoriesController extends Controller
     public function addCategory(Request $request)
     {
 
-        $request->validate([
-            'categoryImage'     =>  'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'categoryName' => 'max:255',
-        ]);
+        $request->validate(
+            [
+                'categoryImage'     =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'categoryName' => 'max:255'
+            ],
+            [
+                'categoryImage.required' => 'Prenesite sliko kategorije ',
+                'categoryName.required' => 'Vpišite ime Kategorije'
+            ]
+        );
 
         //create new category
         $category = new category();
@@ -66,6 +72,8 @@ class categoriesController extends Controller
                 //delete image linked to category
                 $path = public_path() . "/images/categories/" . $category->categoryImage;
                 unlink($path);
+
+
 
                 //delete category
                 $category->delete();

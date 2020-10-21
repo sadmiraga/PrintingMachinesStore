@@ -2,6 +2,20 @@
 @section('content')
 <div id="formDiv">
 
+    <!-- errror messages -->
+
+
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
 
 {!! Form::open(['url'=>'/addSubCategory', 'method'=> 'post']) !!}
 @csrf

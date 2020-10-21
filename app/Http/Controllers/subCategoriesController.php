@@ -45,6 +45,18 @@ class subCategoriesController extends Controller
     //add subCategory exe
     public function addSubCategory(Request $request)
     {
+
+        request()->validate(
+            [
+                'subCategoryName' => 'required',
+                'categoryID' => 'required'
+            ],
+            [
+                'subCategoryName.required' => 'Vpišite ime potkategorije',
+                'categoryID.required' => 'izberite kategorijo potkategorije'
+            ]
+        );
+
         $subCategory = new subCategory();
         $subCategory->name = $request->input('subCategoryName');
         $subCategory->categoryID = $request->input('categoryID');
@@ -78,6 +90,17 @@ class subCategoriesController extends Controller
     //edit subCategory exe
     public function editSubCategoryExe(Request $request)
     {
+
+        request()->validate(
+            [
+                'subCategoryName' => 'required',
+                'categoryID' => 'required'
+            ],
+            [
+                'subCategoryName.required' => 'Vpišite ime potkategorije',
+                'categoryID.required' => 'izberite kategorijo potkategorije'
+            ]
+        );
 
         $subCategory = subCategory::find($request->input('subCategoryID'));
 

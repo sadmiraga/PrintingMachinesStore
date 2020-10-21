@@ -52,7 +52,7 @@ class CreateMachinesTable extends Migration
 
             //CATEGORY foreign key
             $table->unsignedInteger('categoryID')->unsigned();
-            $table->foreign('categoryID')->references('id')->on('categories');
+            $table->foreign('categoryID')->references('id')->on('categories')->onDelete('cascade');
 
             //SUBCATEGORY foreign key
             $table->integer('subCategoryID')->unsigned()->nullable();

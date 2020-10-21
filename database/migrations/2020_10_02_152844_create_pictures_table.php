@@ -21,7 +21,7 @@ class CreatePicturesTable extends Migration
 
             //MACHINE foreign key
             $table->unsignedInteger('machineID')->unsigned();
-            $table->foreign('machineID')->references('id')->on('machines');
+            $table->foreign('machineID')->references('id')->on('machines')->onDelete('cascade');
         });
     }
 
