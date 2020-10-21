@@ -36,8 +36,8 @@
             <ul class="nav-links">
                 <li class="navbar-li"><a id="home" href="/indexDesign">Home</a></li>
                 <li class="navbar-li"><a id="equipment" href="/products">Equipment</a></li>
-                <li class="navbar-li"><a id="about" href="#">About</a></li>
-                <a href="#"><button id="navbar-buttonID">Contact</button></a>
+                <li class="navbar-li"><a id="about" href="/about">About</a></li>
+                <a href="/contact"><button id="navbar-buttonID">Contact</button></a>
                 <div class="dropdown">
                     <p class="language">English(EN)</p>
                     <ul class="dropdown-content">
@@ -226,10 +226,10 @@
     </header>
     <div class="mobile-nav">
         <div id="mySidepanel" class="sidepanel">
-            <a href="#">Home</a>
-            <a href="#">Equipment</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
+            <a href="/indexDesign">Home</a>
+            <a href="/products">Equipment</a>
+            <a href="/about">About us</a>
+            <a href="/contact">Contact us</a>
             <div class="dropdown">
                 <p class="language">English(EN)</p>
                 <ul class="dropdown-content">

@@ -1,10 +1,20 @@
 .search-container-warp {
-    background-color: #e4f9fc;
+    max-width: 1200px;
     padding-top: 2%;
     padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sarch-container-bg {
+    background-color: #e4f9fc;
+}
+.form-control-wrap {
+    padding-top: 10px;
+    padding-left: 7%;
 }
 .content {
-    padding-top: 9%;
+    padding-top: 13.5vh !important;
+    background-color: white;
 }
 .search-container {
     margin-left: auto;
@@ -24,7 +34,7 @@
 
 input#search-bar {
     margin: 0 auto;
-    width: 100%;
+    max-width: 1200px;
     height: 45px;
     padding: 0 20px;
     font-size: 1rem;
@@ -55,7 +65,6 @@ input#search-bar {
     width: 75px;
     height: 75px;
     top: -62px;
-    right: -15px;
 }
 
 .products {
@@ -85,20 +94,6 @@ input#search-bar {
 .sort p {
     padding-top: 15px;
     color: lightgray;
-}
-.dropdownbtn {
-    border: 1px solid #008abf;
-    background-color: #f8fafc;
-    color: black;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.dropdown {
-    padding: 0;
-    position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
@@ -161,7 +156,11 @@ input#search-bar {
 }
 
 .product-wrap {
-    display: flex;
+    max-width: 1200px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product {
@@ -226,13 +225,41 @@ input#search-bar {
     padding-right: 0;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
     margin-bottom: 4%;
+    cursor: pointer;
 }
 
-.makeOfferButton {
-    color: white;
-    background-color: #f0c332;
-    padding: 5px 25px;
-    border: none;
+.view-more {
+    color: #f0c332;
+}
+#categoryID,
+#subCategoryID {
+    width: 40% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.dropdown-sort {
+    padding: 10px;
+    position: relative;
+    width: 20%;
+    display: inline-block;
+}
+.sort-filter-id {
+    width: 30%;
+}
+
+.btn-success {
+    color: #fff;
+    padding: 7px;
+    background-color: #008abf;
+    border-color: #fff;
+}
+
+.btn-success:hover {
+    color: #008abf;
+    background-color: #fff;
+    border-color: #008abf;
 }
 
 @media screen and (max-width: 1200px) {

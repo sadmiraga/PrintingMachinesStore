@@ -76,6 +76,9 @@ Route::get('/productInfo/{machineID}', 'productController@showMachineInfo');
 
 //Contact page routes
 Route::get('/contact', 'productController@contactPage');
+
+//About page routes
+Route::get('/about', 'productController@aboutPage');
 //product routes
 Route::get('/products', 'productController@productPage');
 Route::get('/productGalery/{machineID}', 'pictureController@productGalery');
