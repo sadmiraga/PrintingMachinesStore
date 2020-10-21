@@ -66,6 +66,7 @@ Route::post('/addImageToMachine', 'pictureController@addImageToMachine');
 //search rutes
 Route::post('/search', 'searchController@machineSearch');
 Route::post('/filterMachines', 'searchController@filterMachines');
+Route::get('/products/byCategory/{categoryID}', 'searchController@byCategory');
 
 //USER exeperience routes
 Route::get('/machine/{machineiD}', 'uixController@showMachine');

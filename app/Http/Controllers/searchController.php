@@ -86,6 +86,10 @@ class searchController extends Controller
             } else if ($sortByFilter == 4) {
                 $machines = machine::orderBy('created_at', 'desc')->paginate(15);
             }
+        } else if ($categoryFilter != 0 and $subCategoryFilter != 0) {
+            $machines = machine::where('categoryID', $categoryFilter)
+                ->where('subCategoryID', $subCategoryFilter)
+                ->paginate(15);
         } else if ($categoryFilter == 0 and $subCategoryFilter == 0 and $sortByFilter == 0) {
             return redirect('/products');
         }
@@ -94,5 +98,21 @@ class searchController extends Controller
 
         return view('userExperience.productPage')->with('categories', $categories)->with('subCategories', $subCategories)
             ->with('pictures', $pictures)->with('machines', $machines);
+    }
+
+
+
+    public function byCategory($categoryID)
+    {
+
+        //get neccesary data
+        $categories = category::all();
+        $subCategories = subCategory::all();
+        $pictures = picture::all();
+
+        $machines = machine::where('categoryID', $categoryID)->paginate(15);
+        return view('userExperience.productPage')->with('machines', $machines)
+            ->with('categories', $categories)->with('subCategories', $subCategories)
+            ->with('pictures', $pictures);
     }
 }
