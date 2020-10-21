@@ -277,10 +277,19 @@
             <div class="footer-wrap">
                 <div class="newslatter">
                     <h3>NEWSLETTER</h3>
-                    <input type="email" placeholder="E-mail" name="email">
+                    {!! Form::open(['url'=>'/addEmail', 'method'=> 'post' ,'id'=>'newsletterForm', 'enctype'=> 'multipart/form-data']) !!}
+                        <input type="email" placeholder="E-mail" name="email">
+                    {!! Form::close() !!}
+
+                    <script>
+                        function submitForm() {
+                            document.getElementById("newsletterForm").submit();
+                        }
+                        </script>
+
                 </div>
                 <div class="subscribe-button-div">
-                    <button class="subscribe-button">Subscribe</button>
+                    <button onclick="submitForm()" class="subscribe-button">Subscribe</button>
                 </div>
                 <div class="footer-social">
                     <i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 30px; color: white;"
