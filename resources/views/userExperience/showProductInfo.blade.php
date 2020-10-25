@@ -87,13 +87,13 @@
                         /
                         @endif
                     </dd>
-                    <dt>Model: </dt>
-                    <dd>
+
                         @if($machine->model != null)
+                        <dt>Model: </dt>
+                        <dd>
 
                         {{$machine->model}}
-                        @else
-                        /
+
                         @endif
                     </dd>
                     <dt>Manufacturer: </dt>
