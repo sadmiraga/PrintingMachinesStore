@@ -16,13 +16,13 @@
         <div class="hero-search" data-aos="fade-in">
             <p>Find the best deal</p>
 
-                {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
-                'id'=>'searchForm']) !!}
+            {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
+            'id'=>'searchForm']) !!}
 
-                <input class="form-control" name="query" type="text" id="search-bar" placeholder="Search..">
-                <a onclick="submitForm()" href="#"><img class="search-icon"
-                        src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-                {{ Form::close() }}
+            <input class="form-control" name="query" type="text" id="search-bar" placeholder="Search..">
+            <a onclick="submitForm()" href="#"><img class="search-icon"
+                    src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            {{ Form::close() }}
 
         </div>
     </div>
@@ -99,7 +99,8 @@ window.onload = function() {
                 <div class='row'>
                     @foreach($categories as $category)
 
-                    <div onclick="window.location.href='/products/byCategory/{{$category->id}}'" data-aos="fade-right" style="overflow: hidden;" class='col-md-4' id="categories-col">
+                    <div onclick="window.location.href='/products/byCategory/{{$category->id}}'" data-aos="fade-right"
+                        style="overflow: hidden;" class='col-md-4' id="categories-col">
                         <img class="categories-img" style="object-fit: cover;" height="200" width="500"
                             src="images\categories\{{$category->categoryImage}}">
                         <div class="text-block">
@@ -138,14 +139,14 @@ window.onload = function() {
                 nation's
                 most trusted dealers in presses, cutters, CTP systems, die cutters, wide format printers and more!
             </p>
-            <button class="text-container-button">ABOUT US</button>
+            <a href="/about"><button class="text-container-button">ABOUT US</button></a>
         </div>
     </div>
 </div>
 
 <div class="content-parallax">
     <p class="text-parallax" data-aos="zoom-in ">BUY YOUR MACHINE NOW</p>
-    <button class="button-parallax" data-aos="zoom in">EQUIPMENT</button>
+    <a href="/products"><button class="button-parallax" data-aos="zoom in">EQUIPMENT</button></a>
 </div>
 
 <div class="content-contact-outter-wrap">
@@ -158,7 +159,7 @@ window.onload = function() {
                     <p> Find answers on most asked questions<br> or contact us for help.</p>
                 </div>
                 <div class=" contact-button-div" data-aos="fade-left">
-                    <a class=contact-a>Contact us</a>
+                    <a class="contact-a" href="/contact">Contact us</a>
                 </div>
             </div>
         </div>

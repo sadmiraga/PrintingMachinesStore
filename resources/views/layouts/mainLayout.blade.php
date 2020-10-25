@@ -142,7 +142,7 @@
 
             } else {
                 counter = 1;
-                document.getElementById("navbarID").style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+                document.getElementById("navbarID").style.backgroundColor = "rgba(255, 255, 255)";
                 document.getElementById("navbarID").style.fontSize = "20px";
                 document.getElementById("navbarID").style.padding = "2px 5%";
                 document.getElementById("logoID").style.height = "120px";
@@ -277,15 +277,16 @@
             <div class="footer-wrap">
                 <div class="newslatter">
                     <h3>NEWSLETTER</h3>
-                    {!! Form::open(['url'=>'/addEmail', 'method'=> 'post' ,'id'=>'newsletterForm', 'enctype'=> 'multipart/form-data']) !!}
-                        <input type="email" placeholder="E-mail" name="email">
+                    {!! Form::open(['url'=>'/addEmail', 'method'=> 'post' ,'id'=>'newsletterForm', 'enctype'=>
+                    'multipart/form-data']) !!}
+                    <input type="email" placeholder="E-mail" name="email">
                     {!! Form::close() !!}
 
                     <script>
-                        function submitForm() {
-                            document.getElementById("newsletterForm").submit();
-                        }
-                        </script>
+                    function submitForm() {
+                        document.getElementById("newsletterForm").submit();
+                    }
+                    </script>
 
                 </div>
                 <div class="subscribe-button-div">
@@ -308,6 +309,7 @@
         duration: 1200,
     })
     </script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 </body>
 
 </html>

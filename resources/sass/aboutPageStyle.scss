@@ -5,12 +5,14 @@
 .about-page-content {
     background-color: white;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-    padding: 20px;
+    padding: 100px;
     max-width: 1200px;
     margin-left: auto;
     text-align: justify;
     text-justify: inter-word;
     margin-right: auto;
+    top: -200px;
+    position: relative;
 }
 
 .about-page-content p {

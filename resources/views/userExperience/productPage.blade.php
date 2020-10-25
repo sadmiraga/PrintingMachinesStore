@@ -158,7 +158,7 @@ $('#categoryID').change(function() {
                     <p> Find answers on most asked questions<br> or contact us for help.</p>
                 </div>
                 <div class=" contact-button-div" data-aos="fade-left">
-                    <a class=contact-a>Contact us</a>
+                    <a class="contact-a" href="/contact">Contact us</a>
                 </div>
             </div>
         </div>

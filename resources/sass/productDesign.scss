@@ -253,7 +253,7 @@ input#search-bar {
     color: #fff;
     padding: 7px;
     background-color: #008abf;
-    border-color: #fff;
+    border-color: #008abf;
 }
 
 .btn-success:hover {
@@ -262,8 +262,18 @@ input#search-bar {
     border-color: #008abf;
 }
 
-@media screen and (max-width: 1200px) {
-    products {
+.productCard:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 705px) {
+    .products {
         display: block;
+    }
+
+    #productCard {
+        margin-right: auto;
+        margin-left: auto;
+        width: 60% !important;
     }
 }

@@ -1,6 +1,9 @@
 @extends('layouts.mainLayout')
 
 @section('content')
+<div class="contact-page-hero">
+    <img src="/images/contact-hero.png" alt="hero">
+</div>
 <div class="about-page-wrap">
     <div class="about-page-content">
         <p data-aos="zoom-in">
@@ -33,7 +36,7 @@
                     <p> Find answers on most asked questions<br> or contact us for help.</p>
                 </div>
                 <div class=" contact-button-div" data-aos="fade-left">
-                    <a class=contact-a>Contact us</a>
+                    <a class=contact-a href="/contact">Contact us</a>
                 </div>
             </div>
         </div>

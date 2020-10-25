@@ -43,7 +43,7 @@
 
     @yield('content')
 
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="position: fixed;top: 5px;font-size:30px;cursor:pointer;left: 50px;" onclick="openNav()">☰</span>
 
     <script>
     function openNav() {

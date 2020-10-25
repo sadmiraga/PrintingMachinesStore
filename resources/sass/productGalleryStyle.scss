@@ -1,0 +1,48 @@
+.gallery-wraper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.next {
+    font-size: 48px;
+    color: #0091ae;
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.next:hover {
+    color: #f8d567;
+}
+
+.prev:hover {
+    color: #f8d567;
+}
+.prev {
+    position: absolute;
+    font-size: 48px;
+    color: #0091ae;
+    top: 50%;
+    left: 50%;
+    margin-left: -55%;
+    transform: translate(-50%, -50%);
+}
+#close-window {
+    position: absolute;
+    font-size: 25px;
+    color: #0091ae;
+    left: 101%;
+    top: -1%;
+    transform: translate(-50%, -50%);
+}
+#close-window:hover {
+    color: #f8d567;
+}
+.mySlides {
+    min-width: 800px;
+    max-width: 800px;
+    overflow: hidden;
+}

@@ -6,8 +6,17 @@
 
 <div class="product-info-wrap">
     <div class="product-info">
+
+        {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
+        'id'=>'searchForm']) !!}
+
+        <input class="form-control" name="query" type="text" id="search-bar" placeholder="Search..">
+        <a onclick="submitForm()" href="#"><img class="search-icon"
+                src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        {{ Form::close() }}
+
         <div class="product-info-name">
-            <h1>{{$machine->name}}</h1>
+            <h2>{{$machine->name}}</h2>
         </div>
         <div class="product-info-gallery-wrap">
             <div class="product-info-gallery">
@@ -55,108 +64,150 @@
             </div>
             <div class="make-offer-wrap">
                 <div class="make-offer-container">
-                    <h1>Contact us
-                    </h1>
+                    <h2>Contact us
+                    </h2>
                     <p class="make-offer-number">+386 31 790 586</p>
-                    <h1>E-mail</h1>
+                    <h2>E-mail</h2>
                     <p class="make-offer-email">Mail@gmail.com</p>
                     <button onclick="window.location.href='/sendMail'" class="make-offer-btn">MAKE OFFER</button>
                 </div>
             </div>
+
         </div>
         <div class="product-info-desc">
-            <h1>Description</h1>
-            <ul class="product-info-desc-content">
-                <li>
-                    <p class="product-info-data">Name: </p>
-                    <p class="product-info-data-desc">{{$machine->name}}</p>
-                </li>
+            <h2>Description</h2>
+            <div class="product-info-desc-content">
+                <dl class="product-info-data">
+                    <dt>Name: </dt>
+                    <dd>
+                        @if($machine->name != null)
 
-                @if($machine->model != null)
-                <li>
-                    <p class="product-info-data">Model: </p>
-                    <p class="product-info-data-desc"> {{$machine->model}}</p>
-                </li>
-                @endif
+                        {{$machine->name}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Model: </dt>
+                    <dd>
+                        @if($machine->model != null)
 
-                @if($machine->manufacturer != null)
-                <li>
-                    <p class="product-info-data">Manufacturer: </p>
-                    <p class="product-info-data-desc">{{$machine->manufacturer}}</p>
-                </li>
-                @endif
+                        {{$machine->model}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Manufacturer: </dt>
+                    <dd>
+                        @if($machine->manufacturer != null)
 
-                @if($machine->year != null)
-                <li>
-                    <p class="product-info-data">year: </p>
-                    <p class="product-info-data-desc"> {{$machine->year}}</p>
-                </li>
-                @endif
+                        {{$machine->manufacturer}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Year: </dt>
+                    <dd>
+                        @if($machine->year != null)
 
-                @if($machine->numberOfColors != null)
-                <li>
-                    <p class="product-info-data">Number of Colors: </p>
-                    <p class="product-info-data-desc">{{$machine->numberOfColors}}</p>
-                </li>
-                @endif
+                        {{$machine->year}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Number of Colors: </dt>
+                    <dd>
+                        @if($machine->numberOfColors != null)
 
+                        {{$machine->numberOfColors}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Condition: </dt>
+                    <dd>
+                        {{$machine->condition}}
+                    </dd>
+                    <dt>Sheet size: </dt>
+                    <dd>
+                        @if($machine->sheetSize != null)
 
-                <li>
-                    <p class="product-info-data">Condition: </p>
-                    <p class="product-info-data-desc">{{$machine->condition}}</p>
-                </li>
+                        {{$machine->sheetSize}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Stock Number: </dt>
+                    <dd>
+                        @if($machine->stockNumber != null)
 
-                @if($machine->sheetSize != null)
-                <li>
-                    <p class="product-info-data">Sheet size: </p>
-                    <p class="product-info-data-desc">{{$machine->sheetSize}}</p>
-                </li>
-                @endif
+                        {{$machine->stockNumber}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Serial number: </dt>
+                    <dd>
+                        @if($machine->serialNumber != null)
 
-                @if($machine->stockNumber != null)
-                <li>
-                    <p class="product-info-data">Stock Number: </p>
-                    <p class="product-info-data-desc">{{$machine->stockNumber}}</p>
-                </li>
-                @endif
+                        {{$machine->serialNumber}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Impresions: </dt>
+                    <dd>
+                        @if($machine->impresions != null)
 
-                @if($machine->serialNumber != null)
-                <li>
-                    <p class="product-info-data">Serial number: </p>
-                    <p class="product-info-data-desc">{{$machine->serialNumber}}</p>
-                </li>
-                @endif
+                        {{$machine->impresions}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Category: </dt>
+                    <dd>
+                        @if($machine->categoryID != null)
 
+                        {{$categoryName}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+                    <dt>Subcategory: </dt>
+                    <dd>
 
-                @if($machine->impresions != null)
-                <li>
-                    <p class="product-info-data">impresions: </p>
-                    <p class="product-info-data-desc">{{$machine->impresions}}</p>
-                </li>
-                @endif
+                        @if($machine->subCategoryID != null)
 
-
-                @if($machine->categoryID != null)
-                <li>
-                    <p class="product-info-data">category: </p>
-                    <p class="product-info-data-desc">{{$categoryName}}</p>
-                </li>
-                @endif
-
-                @if($machine->subCategoryID != null)
-                <li>
-                    <p class="product-info-data">subcategory: </p>
-                    <p class="product-info-data-desc">{{$subCategoryName}}</p>
-                </li>
-                @endif
-
-
-
-            </ul>
+                        {{$subCategoryName}}
+                        @else
+                        /
+                        @endif
+                    </dd>
+            </div>
         </div>
     </div>
 </div>
 
+<iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.584566976981!2d15.105529215840997!3d46.35778888139304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476567284cdade01%3A0xcb884d5a5ae91c38!2sLjubljanska%20cesta%205a%2C%203320%20Velenje!5e0!3m2!1sen!2ssi!4v1603291171490!5m2!1sen!2ssi"
+    width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+    tabindex="0"></iframe>
+
+<div class="content-contact-outter-wrap">
+    <div class="content-contact" data-aos="zoom-in">
+        <div class="container-contact">
+            <div class="text-contact">
+                <div data-aos="fade-right">
+                    <i class="fa fa-comments-o" aria-hidden="true" style="font-size: 100px; color: #105561;"></i>
+                    <h1>How can we be of assistance?</h1>
+                    <p> Find answers on most asked questions<br> or contact us for help.</p>
+                </div>
+                <div class=" contact-button-div" data-aos="fade-left">
+                    <a class="contact-a" href="/contact">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>
