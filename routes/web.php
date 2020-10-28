@@ -86,5 +86,4 @@ Route::get('/productGalery/{machineID}', 'pictureController@productGalery');
 
 
 //email routes
-Route::get('/sendMail', 'MailController@html_email');
-Route::post('/addEmail', 'MailController@addMail');
+Route::post('/sendMail', 'MailController@html_email');

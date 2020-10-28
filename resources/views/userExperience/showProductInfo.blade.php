@@ -2,10 +2,24 @@
 
 @section('content')
 
+<script>
+    function submitForm() {
+        document.getElementById("searchForm").submit();
+    }
+</script>
+
 
 
 <div class="product-info-wrap">
     <div class="product-info">
+
+        @isset ($message)
+        <div class="alert alert-success">
+            {{$message}}
+        </div>
+    @endisset
+
+
 
         {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
         'id'=>'searchForm']) !!}
@@ -69,7 +83,14 @@
                     <p class="make-offer-number">+386 31 790 586</p>
                     <h2>E-mail</h2>
                     <p class="make-offer-email">Mail@gmail.com</p>
-                    <button onclick="window.location.href='/sendMail'" class="make-offer-btn">MAKE OFFER</button>
+                    {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
+
+                        <input class="form-control" name="email" type="text"  placeholder="Input your email">
+
+                        <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
+
+                        <button onclick="submitForm()" class="make-offer-btn">MAKE OFFER</button>
+                    {{ Form::close() }}
                 </div>
             </div>
 
