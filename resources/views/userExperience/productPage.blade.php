@@ -74,7 +74,7 @@ function submitForm() {
                 <div onclick="window.location.href='/productInfo/{{$machine->id}}'" id="productCard"
                     class="card col-md-3" style="width: 18rem;">
                     <img class="categories-img" style="object-fit: cover;" height="200" width="500"
-                        src="images\machines\{{$image->image}}">
+                        src="\images\machines\{{$image->image}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$machine->name}}</h5>
                         <p class="card-text">
