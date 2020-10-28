@@ -3,9 +3,9 @@
 @section('content')
 
 <script>
-    function submitForm() {
-        document.getElementById("searchForm").submit();
-    }
+function submitForm() {
+    document.getElementById("searchForm").submit();
+}
 </script>
 
 
@@ -17,7 +17,7 @@
         <div class="alert alert-success">
             {{$message}}
         </div>
-    @endisset
+        @endisset
 
 
 
@@ -83,13 +83,24 @@
                     <p class="make-offer-number">+386 31 790 586</p>
                     <h2>E-mail</h2>
                     <p class="make-offer-email">Mail@gmail.com</p>
+                    <button id="make-offer-btn" class="make-offer-btn">REQUEST PRICE</button>
+                </div>
+            </div>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
                     {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 
-                        <input class="form-control" name="email" type="text"  placeholder="Input your email">
+                    <input class="form-control" id="#m" name="email" type="text" placeholder="Input your email">
 
-                        <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
+                    <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
 
-                        <button onclick="submitForm()" class="make-offer-btn">MAKE OFFER</button>
+                    <button onclick="submitForm()" id="make-offer-btn" class="make-offer-btn">REQUEST PRICE</button>
+
                     {{ Form::close() }}
                 </div>
             </div>
@@ -109,9 +120,9 @@
                         @endif
                     </dd>
 
-                        @if($machine->model != null)
-                        <dt>Model: </dt>
-                        <dd>
+                    @if($machine->model != null)
+                    <dt>Model: </dt>
+                    <dd>
 
                         {{$machine->model}}
 
@@ -232,6 +243,31 @@
 
 
 <script>
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("make-offer-btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 function galleryFunction(smallImg) {
     var fullImg = document.getElementById("imageBox");
     fullImg.src = smallImg.src;

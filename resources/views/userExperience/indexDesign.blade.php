@@ -102,7 +102,7 @@ window.onload = function() {
                     <div onclick="window.location.href='/products/byCategory/{{$category->id}}'" data-aos="fade-right"
                         style="overflow: hidden;" class='col-md-4' id="categories-col">
                         <img class="categories-img" style="object-fit: cover;" height="200" width="500"
-                            src="images\categories\{{$category->categoryImage}}">
+                            src="/images/categories/{{$category->categoryImage}}">
                         <div class="text-block">
                             <p>{{$category->name}}</p>
                         </div>

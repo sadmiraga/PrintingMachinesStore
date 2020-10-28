@@ -43,7 +43,6 @@
                     <ul class="dropdown-content">
                         <li><a href="#">Slovenian(SL)</a></li>
                         <li><a href="#">German(GE)</a></li>
-                        <li><a href="#">French(FR)</a></li>
                 </div>
             </ul>
         </nav>
@@ -64,7 +63,7 @@
                 document.getElementById("navbarID").style.fontSize = "20px";
                 document.getElementById("navbarID").style.padding = "2px 5%";
                 document.getElementById("logoID").style.height = "80px";
-                document.getElementById("logoID").src = "images/logoWhite.png";
+                document.getElementById("logoID").src = "/images/logoWhite.png";
                 document.getElementById("home").style.color = "white";
                 document.getElementById("home").style.marginTop = "20px";
                 document.getElementById("equipment").style.color = "white";
@@ -146,7 +145,7 @@
                 document.getElementById("navbarID").style.fontSize = "20px";
                 document.getElementById("navbarID").style.padding = "2px 5%";
                 document.getElementById("logoID").style.height = "120px";
-                document.getElementById("logoID").src = "images/logoBlack.png";
+                document.getElementById("logoID").src = "/images/logoBlack.png";
                 document.getElementById("home").style.color = "#0088a9";
                 document.getElementById("equipment").style.color = "#0088a9";
                 document.getElementById("about").style.color = "#0088a9";
@@ -235,13 +234,13 @@
                 <ul class="dropdown-content">
                     <li><a href="#">Slovenian(SL)</a></li>
                     <li><a href="#">German(GE)</a></li>
-                    <li><a href="#">French(FR)</a></li>
             </div>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="pavascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </div>
         <div class="mobile-nav-wrap-outter">
             <div class="mobile-nav-wrap-inner">
-                <img class="logo" id="logoID" src="images/logoWhiteCenter.png" alt="logo">
+                <img class="logo" id="logoID" src="/images/logoWhiteCenter.png" alt="logo">
+
                 <button class="openbtn" onclick="openNav()">&#9776;</button>
             </div>
         </div>
