@@ -84,7 +84,9 @@
         <br> <br>
 
         <label class="machineLabel">Izberite Kategorijo</label>
-        <select class="form-control" name="categoryID" id="categoryID">
+        <select
+            style=" width: 50% !important;  margin-right: 25% !important; margin-left: 25% !important; margin-bottom: 3% !important;"
+            class="form-control" name="categoryID" id="categoryID">
             <option value="0" selected disabled> Izberite kategorijo </option>
             @foreach ( $categories as $category)
             <option value="{{$category->id}}"> {{$category->name}} </option>
@@ -94,7 +96,9 @@
         <br> <br> <br>
 
         <label class="machineLabel" id="labelForSubCategory">Izberite pod kategorijo</label>
-        <select class="form-control" name="subCategoryID" id="subCategoryID">
+        <select
+            style=" width: 50% !important;  margin-right: 25% !important; margin-left: 25% !important; margin-bottom: 3% !important;"
+            class="form-control" name="subCategoryID" id="subCategoryID">
             <option value="0" selected disabled> Izberite pod kategorijo </option>
         </select>
 

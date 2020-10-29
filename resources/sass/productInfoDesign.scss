@@ -11,6 +11,7 @@
     display: block;
     opacity: 0.6;
     min-width: 123px;
+    max-width: 123px;
 }
 
 #imageBox {
@@ -43,7 +44,7 @@
 }
 
 .product-info {
-    margin-top: 10%;
+    margin-top: 20vh;
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
@@ -116,7 +117,26 @@
     transition: all 300ms;
 }
 
+.modal-make-offer-btn {
+    padding: 5px 25px;
+    background-color: #105561;
+    border: 1px solid #105561;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 300ms;
+    margin-left: 15%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
 .make-offer-btn:hover {
+    background-color: #f8d567;
+    border: 1px solid #f8d567;
+    color: #105561;
+}
+
+.modal-make-offer-btn:hover {
     background-color: #f8d567;
     border: 1px solid #f8d567;
     color: #105561;
@@ -157,24 +177,6 @@
     display: inline;
 }
 
-@media screen and (max-width: 1230px) {
-    #imageBox {
-        min-width: 499px;
-        max-width: 499px;
-    }
-
-    .make-offer-wrap {
-        margin-left: auto;
-        margin-right: 2%;
-    }
-
-    .product-info-gallery {
-        top: 50%;
-        left: 50%;
-        margin-left: 2%;
-    }
-}
-
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -191,10 +193,13 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin-top: 30vh;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 300px;
+    margin-left: auto;
+    min-width: 300px;
+    margin-right: auto;
 }
 
 /* The Close Button */
@@ -213,13 +218,66 @@
     cursor: pointer;
 }
 
+.media-make-offer-btn {
+    display: none;
+    padding: 5px 25px;
+    background-color: #105561;
+    border: 1px solid #105561;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 300ms;
+    margin-left: 15%;
+}
+
 .product-info-name {
     padding-top: 5%;
     margin-left: 2%;
 }
 
+@media screen and (max-width: 1230px) {
+    #imageBox {
+        min-width: 499px;
+        max-width: 499px;
+    }
+
+    .make-offer-wrap {
+        margin-left: auto;
+        margin-right: 2%;
+    }
+
+    .product-info-gallery {
+        top: 50%;
+        left: 50%;
+        margin-left: 2%;
+    }
+}
+
 @media screen and (max-width: 1080px) {
     .make-offer-container {
         width: 250px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .media-make-offer-btn {
+        display: block;
+    }
+
+    .make-offer-container {
+        display: none;
+    }
+
+    .product-info-gallery-wrap {
+        max-width: 650px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 705px) {
+    .row img {
+        width: 100%;
     }
 }

@@ -19,9 +19,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 
     <!-- StAyles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

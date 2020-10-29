@@ -95,123 +95,110 @@ function submitForm() {
                     <span class="close">&times;</span>
                     {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
 
-                    <input class="form-control" id="#m" name="email" type="text" placeholder="Input your email">
+                    <input class="form-control" id="#m" required="required" name="email" type="text"
+                        placeholder="Input your email">
 
                     <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
 
-                    <button onclick="submitForm()" id="make-offer-btn" class="make-offer-btn">REQUEST PRICE</button>
+                    <button onclick="submitForm()" class="modal-make-offer-btn">REQUEST PRICE</button>
 
                     {{ Form::close() }}
                 </div>
             </div>
-
         </div>
+        <button onclick="submitForm()" class="media-make-offer-btn">REQUEST PRICE</button>
+
         <div class="product-info-desc">
             <h2>Description</h2>
             <div class="product-info-desc-content">
                 <dl class="product-info-data">
+                    @if($machine->name != null)
                     <dt>Name: </dt>
                     <dd>
-                        @if($machine->name != null)
-
                         {{$machine->name}}
-                        @else
-                        /
                         @endif
                     </dd>
 
                     @if($machine->model != null)
                     <dt>Model: </dt>
                     <dd>
-
                         {{$machine->model}}
-
                         @endif
                     </dd>
+
+                    @if($machine->manufacturer != null)
                     <dt>Manufacturer: </dt>
                     <dd>
-                        @if($machine->manufacturer != null)
-
                         {{$machine->manufacturer}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+                    @if($machine->year != null)
                     <dt>Year: </dt>
                     <dd>
-                        @if($machine->year != null)
-
                         {{$machine->year}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+                    @if($machine->numberOfColors != null)
                     <dt>Number of Colors: </dt>
                     <dd>
-                        @if($machine->numberOfColors != null)
-
                         {{$machine->numberOfColors}}
-                        @else
-                        /
                         @endif
                     </dd>
+
                     <dt>Condition: </dt>
                     <dd>
                         {{$machine->condition}}
                     </dd>
+
+                    @if($machine->sheetSize != null)
                     <dt>Sheet size: </dt>
                     <dd>
-                        @if($machine->sheetSize != null)
-
                         {{$machine->sheetSize}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+                    @if($machine->stockNumber != null)
                     <dt>Stock Number: </dt>
                     <dd>
-                        @if($machine->stockNumber != null)
-
                         {{$machine->stockNumber}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+                    @if($machine->serialNumber != null)
                     <dt>Serial number: </dt>
                     <dd>
-                        @if($machine->serialNumber != null)
-
                         {{$machine->serialNumber}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+
+                    @if($machine->impresions != null)
                     <dt>Impresions: </dt>
                     <dd>
-                        @if($machine->impresions != null)
-
                         {{$machine->impresions}}
-                        @else
-                        /
                         @endif
                     </dd>
+                    @if($machine->categoryID != null)
                     <dt>Category: </dt>
                     <dd>
-                        @if($machine->categoryID != null)
-
                         {{$categoryName}}
-                        @else
-                        /
                         @endif
                     </dd>
+
+                    @if($machine->subCategoryID != null)
+
                     <dt>Subcategory: </dt>
                     <dd>
-
-                        @if($machine->subCategoryID != null)
-
                         {{$subCategoryName}}
-                        @else
-                        /
+                        @endif
+                    </dd>
+
+                    @if($machine->description != null)
+                    <dt>Description: </dt>
+                    <dd>
+                        {{$machine->description}}
                         @endif
                     </dd>
             </div>
