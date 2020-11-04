@@ -9,6 +9,7 @@ use App\machine;
 use App\picture;
 use App\subCategory;
 use Illuminate\Support\Facades\Auth;
+use Redirect;
 
 class machineController extends Controller
 {
@@ -18,8 +19,6 @@ class machineController extends Controller
 
     public function index()
     {
-
-
 
         //get all categories
         $categories = DB::table('categories')->orderBy('created_at', 'desc')->get();
@@ -45,6 +44,14 @@ class machineController extends Controller
 
     public function addMachineExe(Request $request)
     {
+
+        //validate form information
+        $request->validate([
+            'referenceName' => 'required',
+        ], [
+            'referenceName.required' => 'Bitte geben Sie den Namen als Referenz ein',
+
+        ]);
 
         //make new machine
         $machine = new machine();
@@ -109,7 +116,12 @@ class machineController extends Controller
         $machine->description = $request->input('description');
 
         //category
-        $machine->categoryID = $request->input('categoryID');
+        if ($request->input('categoryID') == 0) {
+            return redirect()->withErrors(['msg', 'Prosim izberite kategorijo']);
+        } else {
+            $machine->categoryID = $request->input('categoryID');
+        }
+
 
         //add machine to database
         $machine->save();
@@ -260,6 +272,20 @@ class machineController extends Controller
             $machine->subCategoryID = $request->input('subCategoryID');
         }
 
+        $machine->save();
+        return redirect('/machines');
+    }
+
+    public function editDescriptionIndex($machineID)
+    {
+        $machine = machine::find($machineID);
+        return view('adminPanel.machines.editDescription')->with('machine', $machine);
+    }
+
+    public function editDescriptionExe(Request $request)
+    {
+        $machine = machine::find($request->input('machineID'));
+        $machine->description = $request->input('machineDescription');
         $machine->save();
         return redirect('/machines');
     }
