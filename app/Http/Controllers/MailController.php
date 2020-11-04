@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\machine;
 
+
 class MailController extends Controller
 {
     public function html_email(Request $request)
@@ -29,5 +30,13 @@ class MailController extends Controller
         });
 
         return redirect()->back()->with('message', 'You will receive email within few minutes with additional information');
+    }
+
+    public function addMail(Request $request)
+    {
+        $mail = new contactMail();
+        $mail->email = $request->input('email');
+        $mail->save();
+        return redirect()->back();
     }
 }

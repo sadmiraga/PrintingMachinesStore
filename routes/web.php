@@ -68,3 +68,4 @@ Route::get('/getSubCategories', 'subCategoriesController@getSubCategories');
 
 //email routes
 Route::post('/sendMail', 'MailController@html_email');
+Route::post('/addEmail', 'MailController@addMail');

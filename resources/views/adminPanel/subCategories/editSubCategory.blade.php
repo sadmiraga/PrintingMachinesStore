@@ -4,8 +4,8 @@
 
     <h3 id="adminPanelTextInput" class="adminPageTitle"> Uredi podkategoriju</h3>
 
-    @if ($errors->any())
-<div class="alert alert-danger">
+@if ($errors->any())
+<div id="errorMessageDIv" class="alert alert-danger">
     <ul>
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -13,7 +13,6 @@
     </ul>
 </div>
 @endif
-
 {!! Form::open(['url'=>'/updateSubCategory', 'method'=> 'post']) !!}
 @csrf
 
