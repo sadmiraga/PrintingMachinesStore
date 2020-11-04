@@ -232,6 +232,7 @@ body {
     padding-bottom: 5%;
 }
 .contact-container {
+    display: inline-grid;
     background-color: #f0c332;
     width: 45%;
     color: white;
@@ -243,17 +244,19 @@ body {
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
 }
 
-.contact-container p {
+.contact-container a {
     font-size: 20px;
     cursor: pointer;
     transition: 300ms ease 0s;
     font-weight: bold;
+    color: white;
+    text-decoration: none;
 }
 
 .mail {
     margin-top: 30%;
 }
-.contact-container p:hover {
+.contact-container a:hover {
     color: #105561;
 }
 

@@ -118,8 +118,8 @@ window.onload = function() {
     <div class="content-text">
         <div class="contact-container" data-aos="fade-right">
             <i class="fa fa-mobile" aria-hidden="true" style="font-size: 100px; color: #105561;" id="mobile"></i>
-            <p class="number">+386 31 790 586</p>
-            <p class="mail">nk.graphicmachines@gmail.com</p>
+            <a class="number" href="tel:+38631790586">+386 31 790 586</a>
+            <a class="mail" href="mailto:nk.graphicmachines@gmail.com">nk.graphicmachines@gmail.com</a>
         </div>
         <div class="text-container" data-aos="zoom-in">
             <p class="text-container-h1">
