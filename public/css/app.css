@@ -14873,6 +14873,14 @@ body {
   }
 }
 
+.categoryDisplayName {
+  font-size: 25px;
+  text-align: center;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+}
+
 .search-container-warp {
   max-width: 1200px;
   padding-top: 2%;
