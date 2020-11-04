@@ -18,27 +18,21 @@
 
 
         <label class="machineLabel"> Obvezno * </label>
-        {!!Form::text('machineName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime
-        mašine', 'required'=>'required'])!!}
+        {!!Form::text('machineName','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite ime mašine', 'required'=>'required'])!!}
 
 
-        {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite
-        model mašine'])!!}
+        {!!Form::text('machineModel','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite model mašine'])!!}
 
         <label class="machineLabel"> Obvezno * </label>
-        {!!Form::text('manufacturer','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite
-        proizvajalca masine'])!!}
+        {!!Form::text('manufacturer','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite proizvajalca masine'])!!}
 
 
-        {!!Form::text('stockNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Stock
-        Number'])!!}
+        {!!Form::text('stockNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite kolicinsko stanje'])!!}
 
 
-        {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet
-        size'])!!}
+        {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite velikost lista'])!!}
 
-        {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial
-        Number'])!!}
+        {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Vpišite serijsko število'])!!}
 
 
 
@@ -52,8 +46,7 @@
         <label class="machineLabel"> Vnesite slike za mašino </label>
         <input required="required" id="adminPanelTextInput" placeholder="vnesite slike masine" type="file" name="files[]" multiple>
 
-        {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet
-        size'])!!}
+
 
         <label class="machineLabel"> Stanje</label>
         <select id="adminPanelTextInput" class="form-control" name="condition">
@@ -62,15 +55,10 @@
         </select>
 
         <label class="machineLabel"> Letnik masine </label>
-
-
         {!! Form::input('number', 'year', 2020, ['id' => 'adminPanelTextInput', 'class' => 'form-control', 'min' =>
         1800, 'max' => 2020]) !!}
 
 
-
-        {!!Form::text('serialNumber','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Serial
-        Number'])!!}
 
 
         <label class="machineLabel">Impresions</label>
@@ -126,21 +114,21 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Condition</th>
+            <th scope="col">Ime</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Stanje</th>
             <th scope="col">Model</th>
-            <th scope="col">Manufacturer</th>
-            <th scope="col">Year</th>
-            <th scope="col"># of colors</th>
-            <th scope="col">Sheet size</th>
-            <th scope="col">Stock Number</th>
-            <th scope="col">Serial Number</th>
+            <th scope="col">Proizvajalec</th>
+            <th scope="col">Letnik</th>
+            <th scope="col">Stevilo barv</th>
+            <th scope="col">Velikost lista</th>
+            <th scope="col">Stanje</th>
+            <th scope="col">Serijsko stevilo</th>
             <th scope="col">Impresions</th>
-            <th scope="col">Description</th>
-            <th scope="col">Category</th>
-            <th scope="col">Sub Category</th>
-            <th scope="col">Images</th>
+            <th scope="col">opis</th>
+            <th scope="col">Kategorija</th>
+            <th scope="col">Podkategorija</th>
+            <th scope="col">Slike</th>
             <th scope="col">#</th>
             <th scope="col">#</th>
 
@@ -162,7 +150,7 @@
             <td>{{$machine->stockNumber}}</td>
             <td>{{$machine->serialNumber}}</td>
             <td>{{$machine->impresions}}</td>
-            <td>description</td>
+            <td onMouseOver="this.style.cursor='pointer'" onclick="location.href='/editDescription/{{$machine->id}}'">Pogledaj opis</td>
             <td>
                 @foreach($categories as $category)
                 @if($category->id == $machine->categoryID)
@@ -179,9 +167,9 @@
             </td>
             <td onMouseOver="this.style.cursor='pointer'" onclick="location.href='/machineImages/{{$machine->id}}'"><i
                     class="fa fa-picture-o" aria-hidden="true" style="font-size: 35px"></i></td>
-            <td><button onclick="location.href='/editMachine/{{$machine->id}}'" class="btn btn-warning">Edit </button>
+            <td><button onclick="location.href='/editMachine/{{$machine->id}}'" class="btn btn-warning">uredi </button>
             </td>
-            <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">delete</button>
+            <td><button onclick="location.href='/deleteMachine/{{$machine->id}}'" class="btn btn-danger">izbrisi</button>
             </td>
         </tr>
         @endforeach

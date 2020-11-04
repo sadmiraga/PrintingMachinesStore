@@ -20,8 +20,6 @@ class machineController extends Controller
     public function index()
     {
 
-
-
         //get all categories
         $categories = DB::table('categories')->orderBy('created_at', 'desc')->get();
 
@@ -274,6 +272,20 @@ class machineController extends Controller
             $machine->subCategoryID = $request->input('subCategoryID');
         }
 
+        $machine->save();
+        return redirect('/machines');
+    }
+
+    public function editDescriptionIndex($machineID)
+    {
+        $machine = machine::find($machineID);
+        return view('adminPanel.machines.editDescription')->with('machine', $machine);
+    }
+
+    public function editDescriptionExe(Request $request)
+    {
+        $machine = machine::find($request->input('machineID'));
+        $machine->description = $request->input('machineDescription');
         $machine->save();
         return redirect('/machines');
     }

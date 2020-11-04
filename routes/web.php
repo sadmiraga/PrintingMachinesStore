@@ -54,6 +54,8 @@ Route::post('/addMachine', 'machineController@addMachineExe');
 Route::get('/deleteMachine/{machineID}', 'machineController@delete');
 Route::get('/editMachine/{machineID}', 'machineController@editMachine');
 Route::post('/updateMachine', 'machineController@updateMachine');
+Route::get('/editDescription/{machineID}', 'machineController@editDescriptionIndex');
+Route::post('/editDescription', 'machineController@editDescriptionExe');
 
 
 //images routes
