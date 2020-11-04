@@ -9,6 +9,7 @@ use App\machine;
 use App\picture;
 use App\subCategory;
 use Illuminate\Support\Facades\Auth;
+use Redirect;
 
 class machineController extends Controller
 {
@@ -45,6 +46,14 @@ class machineController extends Controller
 
     public function addMachineExe(Request $request)
     {
+
+        //validate form information
+        $request->validate([
+            'referenceName' => 'required',
+        ], [
+            'referenceName.required' => 'Bitte geben Sie den Namen als Referenz ein',
+
+        ]);
 
         //make new machine
         $machine = new machine();
@@ -109,7 +118,12 @@ class machineController extends Controller
         $machine->description = $request->input('description');
 
         //category
-        $machine->categoryID = $request->input('categoryID');
+        if ($request->input('categoryID') == 0) {
+            return redirect()->withErrors(['msg', 'Prosim izberite kategorijo']);
+        } else {
+            $machine->categoryID = $request->input('categoryID');
+        }
+
 
         //add machine to database
         $machine->save();

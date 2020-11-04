@@ -6,6 +6,12 @@
 <div class="adminContainer">
     <div id="formDiv">
 
+        @if($errors->any())
+        <div class="alert alert-danger" id="adminPanelTextInput" role="alert">
+            {{$errors->first()}}
+          </div>
+        @endif
+
         {!! Form::open(['url'=>'/addMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
         'class'=>'form-horizontal']) !!}
         @csrf
@@ -44,7 +50,7 @@
 
 
         <label class="machineLabel"> Vnesite slike za mašino </label>
-        <input id="adminPanelTextInput" placeholder="vnesite slike masine" type="file" name="files[]" multiple>
+        <input required="required" id="adminPanelTextInput" placeholder="vnesite slike masine" type="file" name="files[]" multiple>
 
         {!!Form::text('sheetSize','',['class'=>'form-control','id'=>'adminPanelTextInput','placeholder'=>'Sheet
         size'])!!}
@@ -84,7 +90,7 @@
         <br> <br>
 
         <label class="machineLabel">Izberite Kategorijo</label>
-        <select
+        <select required
             style=" width: 50% !important;  margin-right: 25% !important; margin-left: 25% !important; margin-bottom: 3% !important;"
             class="form-control" name="categoryID" id="categoryID">
             <option value="0" selected disabled> Izberite kategorijo </option>
