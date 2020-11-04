@@ -37,13 +37,48 @@
                 <li class="navbar-li"><a id="about" href="/about">About</a></li>
                 <a href="/contact"><button id="navbar-buttonID">Contact</button></a>
                 <div class="dropdown">
-                    <p class="language">English(EN)</p>
+                    <p class="language">Language</p>
                     <ul class="dropdown-content">
-                        <li><a href="#">Slovenian(SL)</a></li>
-                        <li><a href="#">German(GE)</a></li>
+                        <li><a href="#googtrans(en|en)" onclick="setTimeout('history.go(0);',500); changeLang('English(en)')" data-lang="en">English(en)</a></li>
+                        <li><a href="#googtrans(en|sl)" onclick="setTimeout('history.go(0);',500); changeLang('Slovenian(SL)') " data-lang="sl">Slovenian(SL)</a></li>
+                        <li><a href="#googtrans(en|de)" onclick="setTimeout('history.go(0);',500); changeLang('German(GE)') "  data-lang="de">German(GE)</a></li>
+                        <li><a href="#googtrans(en|fr)" onclick="setTimeout('history.go(0);',500); changeLang('French(FR)')" data-lang="fr">French(FR)</a></li>
                 </div>
             </ul>
         </nav>
+
+        <script type="text/javascript">
+
+
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+            }
+
+            function triggerHtmlEvent(element, eventName) {
+              var event;
+              if (document.createEvent) {
+                event = document.createEvent('HTMLEvents');
+                event.initEvent(eventName, true, true);
+                element.dispatchEvent(event);
+              } else {
+                event = document.createEventObject();
+                event.eventType = eventName;
+                element.fireEvent('on' + event.eventType, event);
+              }
+
+            }
+
+            jQuery('.lang-select').click(function() {
+              var theLang = jQuery(this).attr('data-lang');
+              jQuery('.goog-te-combo').val(theLang);
+
+              //alert(jQuery(this).attr('href'));
+              window.location = jQuery(this).attr('href');
+              location.reload();
+
+            });
+          </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
@@ -228,10 +263,12 @@
             <a href="/about">About us</a>
             <a href="/contact">Contact us</a>
             <div class="dropdown">
-                <p class="language">English(EN)</p>
+                <p class="language">Language</p>
                 <ul class="dropdown-content">
-                    <li><a href="#">Slovenian(SL)</a></li>
-                    <li><a href="#">German(GE)</a></li>
+                    <li><a href="#googtrans(en|en)" onclick="setTimeout('history.go(0);',500); changeLangSession('english');" data-lang="en">English(en)</a></li>
+                    <li><a href="#googtrans(en|sl)" onclick="setTimeout('history.go(0);',500); changeLangSession('Slovenian(SL)');" data-lang="sl">Slovenian(SL)</a></li>
+                    <li><a href="#googtrans(en|de)" onclick="setTimeout('history.go(0);',500); changeLangSession('German(GE)');"   data-lang="de">German(GE)</a></li>
+                    <li><a href="#googtrans(en|fr)" onclick="setTimeout('history.go(0);',500); changeLangSession('French(FR)');" data-lang="fr">French(FR)</a></li>
             </div>
             <a href="pavascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         </div>

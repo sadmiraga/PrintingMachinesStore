@@ -26,7 +26,8 @@
 
 
 <label class="machineLabel">Izberite kategorijo kateri potkategorija pripada </label>
-<select class="form-control"  name="categoryID" id="categoryID">
+<select class="form-control"  name="categoryID" id="categoryID"
+style=" width: 50% !important;  margin-right: 25% !important; margin-left: 25% !important; margin-bottom: 3% !important;">
     <option value="0" selected disabled> Izberite kategorijo </option>
     @foreach ( $categories as $category)
         <option value="{{$category->id}}"> {{$category->name}} </option>

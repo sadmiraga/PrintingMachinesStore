@@ -110,6 +110,8 @@ class searchController extends Controller
         $subCategories = subCategory::all();
         $pictures = picture::all();
 
+
+
         $machines = machine::where('categoryID', $categoryID)->paginate(15);
         return view('userExperience.productPage')->with('machines', $machines)
             ->with('categories', $categories)->with('subCategories', $subCategories)
