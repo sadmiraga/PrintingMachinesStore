@@ -25,6 +25,7 @@ class searchController extends Controller
     }
 
 
+
     public function filterMachines(Request $request)
     {
         $categories = category::all();
@@ -45,6 +46,10 @@ class searchController extends Controller
 
         //in case user selected both filter
         if ($categoryFilter != 0 and $subCategoryFilter != 0 and $sortByFilter != 0) {
+
+            //get choosen category name to display
+            $categoryDisplayModel = category::find($categoryFilter);
+            $categoryDisplay = $categoryDisplayModel->name;
 
             //cheapest
             if ($sortByFilter == 1) {
@@ -73,7 +78,14 @@ class searchController extends Controller
         } else if ($categoryFilter != 0 and $subCategoryFilter == 0) {
             $machines = machine::where('categoryID', $categoryFilter)
                 ->paginate(15);
+
+            //get choosen category name to display
+            $categoryDisplayModel = category::find($categoryFilter);
+            $categoryDisplay = $categoryDisplayModel->name;
         } else if ($categoryFilter == 0 and $subCategoryFilter == 0 and $sortByFilter != 0) {
+
+            $categoryDisplay = 'All categories';
+
             $machines = machine::orderBy('created_at', 'desc')->paginate(15);
 
             //chapest
@@ -87,17 +99,25 @@ class searchController extends Controller
                 $machines = machine::orderBy('created_at', 'desc')->paginate(15);
             }
         } else if ($categoryFilter != 0 and $subCategoryFilter != 0) {
+
+            //get choosen category name to display
+            $categoryDisplayModel = category::find($categoryFilter);
+            $categoryDisplay = $categoryDisplayModel->name;
+
             $machines = machine::where('categoryID', $categoryFilter)
                 ->where('subCategoryID', $subCategoryFilter)
                 ->paginate(15);
         } else if ($categoryFilter == 0 and $subCategoryFilter == 0 and $sortByFilter == 0) {
+
+            $categoryDisplay = 'All categories';
+
             return redirect('/products');
         }
 
 
 
         return view('userExperience.productPage')->with('categories', $categories)->with('subCategories', $subCategories)
-            ->with('pictures', $pictures)->with('machines', $machines);
+            ->with('pictures', $pictures)->with('machines', $machines)->with('categoryDisplay', $categoryDisplay);
     }
 
 
@@ -110,9 +130,13 @@ class searchController extends Controller
         $subCategories = subCategory::all();
         $pictures = picture::all();
 
+        $categoryDisplayModel = category::find($categoryID);
+        $categoryDisplay = $categoryDisplayModel->name;
+
         $machines = machine::where('categoryID', $categoryID)->paginate(15);
         return view('userExperience.productPage')->with('machines', $machines)
             ->with('categories', $categories)->with('subCategories', $subCategories)
-            ->with('pictures', $pictures);
+            ->with('pictures', $pictures)
+            ->with('categoryDisplay', $categoryDisplay);
     }
 }

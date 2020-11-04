@@ -27,7 +27,7 @@ function submitForm() {
                 'class'=>'form-inline']) !!}
 
                 <select class="form-control" name="categoryID" id="categoryID">
-                    <option value="0" selected> Category </option>
+                    <option value="0" selected> All Categories </option>
                     @foreach ( $categories as $category)
                     <option value="{{$category->id}}"> {{$category->name}} </option>
                     @endforeach
@@ -56,6 +56,12 @@ function submitForm() {
     </div>
 
     <div class="product-wrap">
+
+        @if(isset($categoryDisplay))
+            <p class="categoryDisplayName"> {{$categoryDisplay}} </p>
+        @else
+            <p class="categoryDisplayName"> {{'All categories'}} </p>
+        @endif
 
         <div class='container-fluid'>
             <div class='row'>
