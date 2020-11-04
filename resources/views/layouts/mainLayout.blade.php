@@ -28,10 +28,10 @@
 <body>
     <!-- Navbar -->
     <header id="navbarID">
-        <img onclick="window.location.href='/indexDesign'" class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">
+        <img onclick="window.location.href='/'" class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">
         <nav>
             <ul class="nav-links">
-                <li class="navbar-li"><a id="home" href="/indexDesign">Home</a></li>
+                <li class="navbar-li"><a id="home" href="/">Home</a></li>
                 <li class="navbar-li"><a id="equipment" href="/products">Equipment</a></li>
                 <li class="navbar-li"><a id="about" href="/about">About</a></li>
                 <a href="/contact"><button id="navbar-buttonID">Contact</button></a>
