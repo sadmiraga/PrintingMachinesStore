@@ -3,6 +3,8 @@
 
 <div id="formDiv">
 
+    <h3 id="adminPanelTextInput" class="adminPageTitle"> Uredi Kategorijo</h3>
+
     @if ($errors->any())
 <div class="alert alert-danger">
     <ul>

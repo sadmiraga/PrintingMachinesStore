@@ -6,6 +6,8 @@
 <div class="adminContainer">
     <div id="formDiv">
 
+        <h3 id="adminPanelTextInput" class="adminPageTitle"> Mašine</h3>
+
         @if($errors->any())
         <div class="alert alert-danger" id="adminPanelTextInput" role="alert">
             {{$errors->first()}}

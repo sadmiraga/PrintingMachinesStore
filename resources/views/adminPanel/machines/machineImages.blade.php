@@ -1,12 +1,18 @@
 @extends('layouts.adminPanelLayout')
 @section('content')
-<br><br><br><br><br><br><br><br>
+
+
+
 
 <div class="machine-images-wrap" style="max-width:500px; margin-left:auto; margin-right:auto; padding-bottom:20px;">
-    <h1>
-        Ime mašine
-    </h1>
 
+
+    <h3 id="adminPanelTextInput" class="adminPageTitle"> Dodaj ali Izbrisi slike za masinu</h3>
+    <h3 style="text-align: center;">
+        {{$machine->name}}
+    </h3>
+
+    <br><br>
 
 
     {!! Form::open(['url'=>'/addImageToMachine', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
@@ -23,7 +29,7 @@
 @foreach($pictures as $picture)
 <div class="machine-images-wrap" style="max-width:500px; margin-left:auto; margin-right:auto;">
     <img src="/images/machines/{{$picture->image}}" alt="error Picture missing" width="500" height="500">
-    <button onclick="window.location.href='/deleteImage/{{$picture->id}}'" class="btn btn-danger"> Delete </button>
+    <button onclick="window.location.href='/deleteImage/{{$picture->id}}'" class="btn btn-danger"> Izbriši </button>
 
 </div>
 

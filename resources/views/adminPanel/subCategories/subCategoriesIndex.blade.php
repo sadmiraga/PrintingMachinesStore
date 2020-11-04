@@ -2,6 +2,8 @@
 @section('content')
 <div id="formDiv">
 
+    <h3 id="adminPanelTextInput" class="adminPageTitle"> Podkategorije</h3>
+
     <!-- errror messages -->
 
 

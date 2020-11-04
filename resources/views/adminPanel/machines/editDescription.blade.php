@@ -4,7 +4,7 @@
 <div id="formDiv">
 
     <h3 id="adminPanelTextInput" class="adminPageTitle"> Uredi Opis</h3>
-    <h5 id="adminPanelTextInput" class="adminPageTitle"> {{$machine->name}}</h5>
+    <h5 id="adminPanelTextInput" style="text-align: center;" > {{$machine->name}}</h5>
 
     <div class="editDescriptionDiv">
 
