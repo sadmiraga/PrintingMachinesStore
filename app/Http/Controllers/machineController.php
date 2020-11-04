@@ -45,13 +45,7 @@ class machineController extends Controller
     public function addMachineExe(Request $request)
     {
 
-        //validate form information
-        $request->validate([
-            'referenceName' => 'required',
-        ], [
-            'referenceName.required' => 'Bitte geben Sie den Namen als Referenz ein',
 
-        ]);
 
         //make new machine
         $machine = new machine();
