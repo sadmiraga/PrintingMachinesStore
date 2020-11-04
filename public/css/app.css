@@ -14538,14 +14538,7 @@ body {
   background-color: #f0c432c5;
 }
 
-#categories-col:hover .categtories-img {
-  width: 300px;
-  height: 10000px;
-}
-
 #categories-col:hover {
-  height: 250px;
-  width: 520px;
   cursor: pointer;
 }
 
@@ -14735,10 +14728,6 @@ body {
 .contact-a:hover {
   text-decoration: none;
   color: #f0c332;
-}
-
-#categories-col:hover {
-  width: 250px;
 }
 
 @media only screen and (max-width: 1200px) {
