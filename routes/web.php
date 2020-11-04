@@ -33,32 +33,32 @@ Route::post('/filterMachines', 'searchController@filterMachines');
 //admin routes
 
 //admin CATEGORY routes
-Route::get('/categories', 'categoriesController@index')->name('categories');
-Route::post('/addCategory', 'categoriesController@addCategory');
-Route::get('/deleteCategory/{categoryID}', 'categoriesController@deleteCategory');
-Route::get('/editCategory/{categoryID}', 'categoriesController@editCategoryIndex');
-Route::post('/updateCategory', 'categoriesController@editCategoryExe');
+Route::get('/categories', 'categoriesController@index')->name('categories')->middleware(['auth', 'auth.admin']);
+Route::post('/addCategory', 'categoriesController@addCategory')->middleware(['auth', 'auth.admin']);
+Route::get('/deleteCategory/{categoryID}', 'categoriesController@deleteCategory')->middleware(['auth', 'auth.admin']);
+Route::get('/editCategory/{categoryID}', 'categoriesController@editCategoryIndex')->middleware(['auth', 'auth.admin']);
+Route::post('/updateCategory', 'categoriesController@editCategoryExe')->middleware(['auth', 'auth.admin']);
 
 //admin SUBCATEGORY routes
 Route::get('/subCategories', 'subCategoriesController@index')->name('subcategories');
-Route::post('/addSubCategory', 'subCategoriesController@addSubCategory');
+Route::post('/addSubCategory', 'subCategoriesController@addSubCategory')->middleware(['auth', 'auth.admin']);
 Route::get('/editSubCategory/{subCategoryID}', 'subCategoriesController@editSubCategoryIndex');
-Route::post('/updateSubCategory', 'subCategoriesController@editSubCategoryExe');
+Route::post('/updateSubCategory', 'subCategoriesController@editSubCategoryExe')->middleware(['auth', 'auth.admin']);
 Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@deleteSubCategory');
 
 //admin MACHINE routes
-Route::get('/machines', 'machineController@index')->name('machines');
-Route::post('/addMachine', 'machineController@addMachineExe');
-Route::get('/deleteMachine/{machineID}', 'machineController@delete');
-Route::get('/editMachine/{machineID}', 'machineController@editMachine');
-Route::post('/updateMachine', 'machineController@updateMachine');
-Route::get('/editDescription/{machineID}', 'machineController@editDescriptionIndex');
-Route::post('/editDescription', 'machineController@editDescriptionExe');
+Route::get('/machines', 'machineController@index')->name('machines')->middleware(['auth', 'auth.admin']);
+Route::post('/addMachine', 'machineController@addMachineExe')->middleware(['auth', 'auth.admin']);
+Route::get('/deleteMachine/{machineID}', 'machineController@delete')->middleware(['auth', 'auth.admin']);
+Route::get('/editMachine/{machineID}', 'machineController@editMachine')->middleware(['auth', 'auth.admin']);
+Route::post('/updateMachine', 'machineController@updateMachine')->middleware(['auth', 'auth.admin']);
+Route::get('/editDescription/{machineID}', 'machineController@editDescriptionIndex')->middleware(['auth', 'auth.admin']);
+Route::post('/editDescription', 'machineController@editDescriptionExe')->middleware(['auth', 'auth.admin']);
 
 //admin IMAGE routes
-Route::get('/machineImages/{machineID}', 'pictureController@machineImages');
-Route::get('/deleteImage/{imageID}', 'pictureController@deleteImage');
-Route::post('/addImageToMachine', 'pictureController@addImageToMachine');
+Route::get('/machineImages/{machineID}', 'pictureController@machineImages')->middleware(['auth', 'auth.admin']);
+Route::get('/deleteImage/{imageID}', 'pictureController@deleteImage')->middleware(['auth', 'auth.admin']);
+Route::post('/addImageToMachine', 'pictureController@addImageToMachine')->middleware(['auth', 'auth.admin']);
 
 
 
