@@ -28,7 +28,7 @@
 <body>
     <!-- Navbar -->
     <header id="navbarID">
-        <img class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">
+        <img onclick="window.location.href='/indexDesign'" class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">
         <nav>
             <ul class="nav-links">
                 <li class="navbar-li"><a id="home" href="/indexDesign">Home</a></li>
