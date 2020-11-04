@@ -123,21 +123,16 @@ window.onload = function() {
         </div>
         <div class="text-container" data-aos="zoom-in">
             <p class="text-container-h1">
-                BUYING AND SELLING PRINTING
-                EQUIPMENT SINCE 1972
+                Trust and seriousness are the basis of the daily work at NK machines
             </p>
             <p class="text-container-p">
-                After 16 years with AM Multigraphics, Jack Oskin opened Dixie Reproductions to supply print businesses
-                with
-                used Davidson, Multilith and AB Dick printing presses.<br><br>
+                This basis in the cooperation with clients and employees allows us to successfully implement the orders and wishes of our customers, 
+                whereby we always punctuality and in every situation guarantee a high standard of quality in execution.<br><br>
 
-                In the late 70s, the company shifted its focus to larger presses, and today it stands as one of the
-                nation's
-                most trusted dealers in presses, cutters, CTP systems, die cutters, wide format printers and
-                more!<br><br>
-                In the late 70s, the company shifted its focus to larger presses, and today it stands as one of the
-                nation's
-                most trusted dealers in presses, cutters, CTP systems, die cutters, wide format printers and more!
+                With our experienced employees, we take on the responsibility to meet the requirements of our customers and to ensure that our own goals
+                 of offering a comprehensive professional service are also implemented.<br><br>
+
+                We believe that it is important not only to work with the best team, but also with the best.
             </p>
             <a href="/about"><button class="text-container-button">ABOUT US</button></a>
         </div>

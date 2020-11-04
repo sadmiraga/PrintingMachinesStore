@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+// import Swiper styles
 
 window.Vue = require('vue');
 

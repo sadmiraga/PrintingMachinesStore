@@ -86,27 +86,65 @@ function submitForm() {
                     <button id="make-offer-btn" class="make-offer-btn">REQUEST PRICE</button>
                 </div>
             </div>
-
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
-
-                    <input class="form-control" id="#m" required="required" name="email" type="text"
-                        placeholder="Input your email">
-
-                    <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
-
-                    <button onclick="submitForm()" class="modal-make-offer-btn">REQUEST PRICE</button>
-
-                    {{ Form::close() }}
-                </div>
-            </div>
         </div>
-        <button onclick="submitForm()" class="media-make-offer-btn">REQUEST PRICE</button>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
+        
+                            <input class="form-control" id="#m" required="required" name="email" type="text"
+                                placeholder="Input your email">
+        
+                            <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
+        
+                            <button onclick="submitForm()" class="modal-make-offer-btn">REQUEST PRICE</button>
+        
+                            {{ Form::close() }}
+                        </div>
+                    </div>  
+
+        <div id="carouselExampleControls" class="carousel slide carousel-min" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+
+
+              <?php 
+                $sliderCounter = 0;
+              ?>
+              @foreach($pictures as $picture)
+
+              @if($sliderCounter == 0)
+              <?php
+                $sliderCounter++;
+              ?>
+                <div class="carousel-item active" style="background-color: white;">
+                    <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="First slide">
+                </div>
+              @else 
+                <div class="carousel-item" style="background-color: white;">
+                    <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="Error picture missing">
+                </div>
+              @endif
+  
+              @endforeach
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true" style="background-color:grey; font-size: 50px; color: white; padding: 0 15px; border-radius: 50%;"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="fa fa-angle-right" aria-hidden="true" style="background-color:grey; font-size: 50px; color: white; padding: 0 15px; border-radius: 50%;"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        <div class="media-make-offer-btn-wrap">
+        <button id="media-make-offer-btn" class="media-make-offer-btn">REQUEST PRICE</button>
+        </div>
+
 
         <div class="product-info-desc">
             <h2>Description</h2>
@@ -234,12 +272,18 @@ var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("make-offer-btn");
+var mediaBtn = document.getElementById("media-make-offer-btn")
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
+
 btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+mediaBtn.onclick = function() {
     modal.style.display = "block";
 }
 
