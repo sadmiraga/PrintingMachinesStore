@@ -13,42 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//public routes
+Route::get('/', 'productController@indexDesign');
+Route::get('/machine/{machineiD}', 'uixController@showMachine');
+Route::get('/products/byCategory/{categoryID}', 'searchController@byCategory');
+Route::get('/productInfo/{machineID}', 'productController@showMachineInfo');
+Route::get('/contact', 'productController@contactPage');
+Route::get('/products', 'productController@productPage');
+Route::get('/productGalery/{machineID}', 'pictureController@productGalery');
+Route::get('/about', 'productController@aboutPage');
 
-Route::get('/design', 'productController@design');
-
-Route::get('/admin', 'adminController@index');
-
-Route::get('/adminLayout', 'productController@adminPanelLayout');
+//public SEARCH routes
+Route::post('/search', 'searchController@machineSearch');
+Route::post('/filterMachines', 'searchController@filterMachines');
 
 
-//ajax routes
-Route::get('/getSubCategories', 'subCategoriesController@getSubCategories');
+//admin routes
 
-
-//category routes
+//admin CATEGORY routes
 Route::get('/categories', 'categoriesController@index')->name('categories');
 Route::post('/addCategory', 'categoriesController@addCategory');
 Route::get('/deleteCategory/{categoryID}', 'categoriesController@deleteCategory');
 Route::get('/editCategory/{categoryID}', 'categoriesController@editCategoryIndex');
 Route::post('/updateCategory', 'categoriesController@editCategoryExe');
 
-
-//subCategories routes
+//admin SUBCATEGORY routes
 Route::get('/subCategories', 'subCategoriesController@index')->name('subcategories');
 Route::post('/addSubCategory', 'subCategoriesController@addSubCategory');
 Route::get('/editSubCategory/{subCategoryID}', 'subCategoriesController@editSubCategoryIndex');
 Route::post('/updateSubCategory', 'subCategoriesController@editSubCategoryExe');
 Route::get('/deleteSubCategory/{subCategoryID}', 'subCategoriesController@deleteSubCategory');
 
-
-//machines routes
+//admin MACHINE routes
 Route::get('/machines', 'machineController@index')->name('machines');
 Route::post('/addMachine', 'machineController@addMachineExe');
 Route::get('/deleteMachine/{machineID}', 'machineController@delete');
@@ -57,34 +55,15 @@ Route::post('/updateMachine', 'machineController@updateMachine');
 Route::get('/editDescription/{machineID}', 'machineController@editDescriptionIndex');
 Route::post('/editDescription', 'machineController@editDescriptionExe');
 
-
-//images routes
+//admin IMAGE routes
 Route::get('/machineImages/{machineID}', 'pictureController@machineImages');
 Route::get('/deleteImage/{imageID}', 'pictureController@deleteImage');
 Route::post('/addImageToMachine', 'pictureController@addImageToMachine');
 
 
 
-//search rutes
-Route::post('/search', 'searchController@machineSearch');
-Route::post('/filterMachines', 'searchController@filterMachines');
-Route::get('/products/byCategory/{categoryID}', 'searchController@byCategory');
-
-//USER exeperience routes
-Route::get('/machine/{machineiD}', 'uixController@showMachine');
-
-//Index routes
-Route::get('/indexDesign', 'productController@indexDesign');
-Route::get('/productInfo/{machineID}', 'productController@showMachineInfo');
-
-//Contact page routes
-Route::get('/contact', 'productController@contactPage');
-
-//About page routes
-Route::get('/about', 'productController@aboutPage');
-//product routes
-Route::get('/products', 'productController@productPage');
-Route::get('/productGalery/{machineID}', 'pictureController@productGalery');
+//ajax routes
+Route::get('/getSubCategories', 'subCategoriesController@getSubCategories');
 
 
 //email routes

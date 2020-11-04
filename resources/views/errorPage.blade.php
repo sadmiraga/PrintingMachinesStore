@@ -8,6 +8,4 @@
     <button class="btn btn-primary" onclick="window.location.href='/'"> ok </button>
 
 
-
-
 @endsection
