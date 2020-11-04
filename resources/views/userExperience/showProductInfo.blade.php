@@ -108,6 +108,41 @@ function submitForm() {
         </div>
         <button onclick="submitForm()" class="media-make-offer-btn">REQUEST PRICE</button>
 
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+
+
+              <?php 
+                $sliderCounter = 0;
+              ?>
+              @foreach($pictures as $picture)
+
+              @if($sliderCounter == 0)
+              <?php
+                $sliderCounter++;
+              ?>
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="First slide">
+                </div>
+              @else 
+                <div class="carousel-item">
+                    <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="Error picture missing">
+                </div>
+              @endif
+  
+              @endforeach
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
         <div class="product-info-desc">
             <h2>Description</h2>
             <div class="product-info-desc-content">

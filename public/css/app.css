@@ -15298,6 +15298,21 @@ body {
   max-width: 123px;
 }
 
+.swiper-container {
+  width: 100%;
+  height: 1000px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #imageBox {
   min-width: 599px;
   max-width: 599px;

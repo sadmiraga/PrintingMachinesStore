@@ -2,7 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,13 +19,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 
     <!-- StAyles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
-
     <!-- Navbar -->
     <header id="navbarID">
         <img class="logo" id="logoID" src="{{URL::asset('images/logoBlack.png')}}" alt="logo">

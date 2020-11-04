@@ -27,6 +27,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.0",
         "aos": "^2.3.4",
-        "slick-carousel": "^1.8.1"
+        "slick-carousel": "^1.8.1",
+        "swiper": "^6.3.5"
     }
 }
