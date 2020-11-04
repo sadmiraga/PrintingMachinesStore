@@ -14538,14 +14538,7 @@ body {
   background-color: #f0c432c5;
 }
 
-#categories-col:hover .categtories-img {
-  width: 300px;
-  height: 10000px;
-}
-
 #categories-col:hover {
-  height: 250px;
-  width: 520px;
   cursor: pointer;
 }
 
@@ -14573,6 +14566,7 @@ body {
 }
 
 .contact-container {
+  display: inline-grid;
   background-color: #f0c332;
   width: 45%;
   color: white;
@@ -14584,18 +14578,20 @@ body {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
 }
 
-.contact-container p {
+.contact-container a {
   font-size: 20px;
   cursor: pointer;
   transition: 300ms ease 0s;
   font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 .mail {
   margin-top: 30%;
 }
 
-.contact-container p:hover {
+.contact-container a:hover {
   color: #105561;
 }
 
@@ -14732,10 +14728,6 @@ body {
 .contact-a:hover {
   text-decoration: none;
   color: #f0c332;
-}
-
-#categories-col:hover {
-  width: 250px;
 }
 
 @media only screen and (max-width: 1200px) {
