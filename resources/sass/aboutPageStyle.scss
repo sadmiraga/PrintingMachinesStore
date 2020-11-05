@@ -19,3 +19,23 @@
     font-size: 1.8rem;
     font-weight: lighter;
 }
+
+@media only screen and (max-width: 500px) {
+    .about-page-content {
+        padding-top: 25%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .about-page-content p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .about-page-content {
+        padding-top: 35%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}

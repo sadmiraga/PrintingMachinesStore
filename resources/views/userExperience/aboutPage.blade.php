@@ -6,7 +6,7 @@
 </div>
 <div class="about-page-wrap">
     <div class="about-page-content">
-        <p data-aos="zoom-in">
+        <p>
             Trust and seriousness are the basis of the daily work at NK machines (Nedzad Karijasevic, SLOVENIA EU). This
             basis in the cooperation with clients and employees allows us to successfully implement the orders and
             wishes of
@@ -15,13 +15,13 @@
             execution.
             <br><br>
         </p>
-        <p data-aos="zoom-in">
+        <p>
             With our experienced employees, we take on the responsibility to meet the requirements of our customers and
             to
             ensure that our own goals of offering a comprehensive professional service are also implemented.
             <br><br>
         </p>
-        <p data-aos="zoom-in">
+        <p>
             We believe that it is important not only to work with the best team, but also with the best.
         </p>
     </div>
