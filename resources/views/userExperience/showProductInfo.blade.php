@@ -30,7 +30,7 @@ function submitForm() {
         {{ Form::close() }}
 
         <div class="product-info-name">
-            <h2>{{$machine->name}}</h2>
+            <h2 class="productInfoDisplayName">{{$machine->name}}</h2>
         </div>
         <div class="product-info-gallery-wrap">
             <div class="product-info-gallery">
@@ -95,23 +95,23 @@ function submitForm() {
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             {!! Form::open(['url'=>'/sendMail', 'method'=> 'post' , 'enctype'=> 'multipart/form-data']) !!}
-        
+
                             <input class="form-control" id="#m" required="required" name="email" type="text"
                                 placeholder="Input your email">
-        
+
                             <input type="hidden" id="machineID" name="machineID" value="{{$machine->id}}">
-        
+
                             <button onclick="submitForm()" class="modal-make-offer-btn">REQUEST PRICE</button>
-        
+
                             {{ Form::close() }}
                         </div>
-                    </div>  
+                    </div>
 
         <div id="carouselExampleControls" class="carousel slide carousel-min" data-ride="carousel" data-interval="false">
             <div class="carousel-inner">
 
 
-              <?php 
+              <?php
                 $sliderCounter = 0;
               ?>
               @foreach($pictures as $picture)
@@ -123,14 +123,14 @@ function submitForm() {
                 <div class="carousel-item active" style="background-color: white;">
                     <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="First slide">
                 </div>
-              @else 
+              @else
                 <div class="carousel-item" style="background-color: white;">
                     <img class="d-block w-100" src='{{URL::asset("images/machines/$picture->image")}}' alt="Error picture missing">
                 </div>
               @endif
-  
+
               @endforeach
-              
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="fa fa-angle-left" aria-hidden="true" style="background-color:grey; font-size: 50px; color: white; padding: 0 15px; border-radius: 50%;"></span>

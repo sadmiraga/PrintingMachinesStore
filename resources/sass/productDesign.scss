@@ -284,6 +284,19 @@ input#search-bar {
         display: block;
     }
 
+    .sarch-container-bg {
+        margin-top: 5%;
+    }
+
+    .productInfoDisplayName {
+        text-align: center;
+        background-color: #3ca7c2;
+        color: white;
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+    }
+
     #productCard {
         margin-right: auto;
         margin-left: auto;
