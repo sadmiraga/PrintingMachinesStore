@@ -10,6 +10,7 @@ use Illuminate\Mail\Mailable;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\machine;
+use App\picture;
 
 
 class MailController extends Controller
@@ -20,9 +21,11 @@ class MailController extends Controller
         $machine = machine::find($request->input('machineID'));
         $machineName = $machine->name;
 
+        $picture = picture::where('machineID', $request->input('machineID'))->first();
+
         $to_name = 'NezadKarijasevic';
         $to_email = $request->input('email');
-        $data = array('name' => "Ogbonna Vitalis(sender_name)", "body" => "A test mail", "machine" => $machine);
+        $data = array('name' => "Ogbonna Vitalis(sender_name)", "body" => "A test mail", "machine" => $machine, "picture" => $picture, 'message' => $this);
         Mail::send('emails.mail', $data, function ($message) use ($to_name, $to_email) {
             $message->to($to_email, $to_name)
                 ->subject('Additional information about machine');

@@ -236,7 +236,10 @@ function submitForm() {
                     @if($machine->description != null)
                     <dt>Description: </dt>
                     <dd>
-                        {{$machine->description}}
+
+                        <?php
+                        echo nl2br($machine->description);
+                    ?>
                         @endif
                     </dd>
             </div>
