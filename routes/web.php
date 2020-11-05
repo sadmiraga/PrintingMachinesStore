@@ -32,6 +32,10 @@ Route::post('/filterMachines', 'searchController@filterMachines');
 
 //admin routes
 
+Route::get('/admin', function () {
+    return redirect('/machines');
+});
+
 //admin CATEGORY routes
 Route::get('/categories', 'categoriesController@index')->name('categories')->middleware(['auth', 'auth.admin']);
 Route::post('/addCategory', 'categoriesController@addCategory')->middleware(['auth', 'auth.admin']);
