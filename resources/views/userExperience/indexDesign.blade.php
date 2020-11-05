@@ -8,7 +8,7 @@
 <div class="hero-image">
     <h1>
         <p class="typewrite" data-period="2000"
-            data-type='[ "NK MACHINES ARE HERE FOR YOU", "FIND BEST DEALS", "WE ARE OFFERING BEST MACHINES"]'>
+            data-type='[ "NK MACHINES ARE HERE FOR YOU", "FIND THE BEST DEALS", "WE ARE OFFERING THE BEST MACHINES"]'>
             <span class="wrap"></span>
         </p>
     </h1>
