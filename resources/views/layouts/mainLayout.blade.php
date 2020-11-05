@@ -24,6 +24,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
+<script>
+    function changeLang(lang){
+        sessionStorage.setItem("lang", lang);
+    }
+</script>
+
 <body>
     <!-- Navbar -->
     <header id="navbarID">
@@ -331,7 +337,12 @@
                         id="linkedin-footer"></i>
                 </div>
             </div>
+            <span style="text-align:center;margin-bottom:0px;color:white;" class="notranslate">Screenshot <script>document.write(new Date().getFullYear()) </script></span>
         </div>
+
+
+
+
 
     </footer>
 

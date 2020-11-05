@@ -6,15 +6,44 @@
 
 
 <div class="hero-image">
-    <h1>
-        <p class="typewrite" data-period="2000"
+    <h1 translate="no">
+
+        <!-- izlomljeni if -->
+
+        <script>
+                var langVariable = sessionStorage.getItem("lang");
+
+                if(langVariable === 'Slovenian(SL)'){
+                    var tag = '$';
+                    var name = "langVariablePHP='";
+                    var value = langVariable;
+                    var last = "'";
+                    var all = tag+name+value+last;
+                    document.writeln(all)
+                }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+        <span class="notranslate">
+        <p  class="typewrite" data-period="2000"
             data-type='[ "NK MACHINES ARE HERE FOR YOU", "FIND BEST DEALS", "WE ARE OFFERING BEST MACHINES"]'>
             <span class="wrap"></span>
         </p>
+    </span>
     </h1>
     <div class="hero-wrap">
         <div class="hero-search" data-aos="fade-in">
-            <p>Find the best deal</p>
+            <p onclick="checkLang();">Find the best deal</p>
 
             {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
             'id'=>'searchForm']) !!}
@@ -126,7 +155,7 @@ window.onload = function() {
                 Trust and seriousness are the basis of the daily work at NK machines
             </p>
             <p class="text-container-p">
-                This basis in the cooperation with clients and employees allows us to successfully implement the orders and wishes of our customers, 
+                This basis in the cooperation with clients and employees allows us to successfully implement the orders and wishes of our customers,
                 whereby we always punctuality and in every situation guarantee a high standard of quality in execution.<br><br>
 
                 With our experienced employees, we take on the responsibility to meet the requirements of our customers and to ensure that our own goals
