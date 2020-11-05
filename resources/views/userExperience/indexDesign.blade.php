@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
 <div class="hero-image">
     <h1>
         <p class="typewrite" data-period="2000"
