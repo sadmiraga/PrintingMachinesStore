@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 
     <!-- StAyles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -67,7 +66,7 @@
 
             }
 
-            jQuery('.lang-select').click(function() {
+              jQuery('.lang-select').click(function() {
               var theLang = jQuery(this).attr('data-lang');
               jQuery('.goog-te-combo').val(theLang);
 
@@ -257,7 +256,7 @@
     </header>
     <div class="mobile-nav">
         <div id="mySidepanel" class="sidepanel">
-            <a href="/indexDesign">Home</a>
+            <a href="/">Home</a>
             <a href="/products">Equipment</a>
             <a href="/about">About us</a>
             <a href="/contact">Contact us</a>

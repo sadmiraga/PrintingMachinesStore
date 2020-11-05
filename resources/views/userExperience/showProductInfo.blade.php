@@ -82,7 +82,7 @@ function submitForm() {
                     </h2>
                     <p class="make-offer-number">+386 31 790 586</p>
                     <h2>E-mail</h2>
-                    <p class="make-offer-email">Mail@gmail.com</p>
+                    <p class="make-offer-email">nk.graphicmachines@gmail.com</p>
                     <button id="make-offer-btn" class="make-offer-btn">REQUEST PRICE</button>
                 </div>
             </div>

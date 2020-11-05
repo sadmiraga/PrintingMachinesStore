@@ -512,8 +512,11 @@ body {
     }
 }
 
-@media only screen and (max-width: 310px) {
+@media only screen and (max-width: 320px) {
     .contact-container .mail {
         font-size: 1rem;
+    }
+    .hero-wrap {
+        top: 70vh;
     }
 }
