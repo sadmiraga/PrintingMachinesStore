@@ -321,7 +321,8 @@
                     <h3>NEWSLETTER</h3>
                     {!! Form::open(['url'=>'/addEmail', 'method'=> 'post' ,'id'=>'newsletterForm', 'enctype'=>
                     'multipart/form-data']) !!}
-                    <input type="email" placeholder="E-mail" name="email">
+                    @csrf
+                    <input type="email" required="required" placeholder="E-mail" name="email">
                     {!! Form::close() !!}
 
                     <script>

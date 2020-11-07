@@ -15,6 +15,7 @@
 
             {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
             'id'=>'searchForm']) !!}
+            @csrf
 
             <input class="form-control" name="query" type="text" id="search-bar" placeholder="Search..">
             <a onclick="submitForm()" href="#"><img class="search-icon"
@@ -123,7 +124,7 @@ window.onload = function() {
                 Trust and seriousness are the basis of the daily work at NK machines
             </p>
             <p class="text-container-p">
-                This basis in the cooperation with clients and employees allows us to successfully implement the orders and wishes of our customers, 
+                This basis in the cooperation with clients and employees allows us to successfully implement the orders and wishes of our customers,
                 whereby we always punctuality and in every situation guarantee a high standard of quality in execution.<br><br>
 
                 With our experienced employees, we take on the responsibility to meet the requirements of our customers and to ensure that our own goals
