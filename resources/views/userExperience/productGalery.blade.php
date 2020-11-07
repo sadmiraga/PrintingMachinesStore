@@ -14,7 +14,7 @@
             <i onclick="goBack()" class="fa fa-times" aria-hidden="true" id="close-window"></i>
 
             <div class="row">
-                <a class="prev" onclik="plusSlides(-1)"><i class="fa fa-angle-left"></i></a>
+                <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-angle-left"></i></a>
                 @foreach ($pictures as $picture)
                 <div class="mySlides">
                     <img src="/images/machines/{{$picture->image}}" alt="slide">
