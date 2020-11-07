@@ -92,6 +92,13 @@ header {
     margin-right: auto;
     transition: 200ms;
 }
+
+.mobile-logo {
+    height: 80px;
+    cursor: pointer;
+    margin-right: auto;
+    transition: 200ms;
+}
 .nav-links {
     list-style: none;
 }
@@ -289,7 +296,7 @@ header {
 .openbtn {
     background-color: #6aabc1;
     cursor: pointer;
-    font-size: 50px;
+    font-size: 30px;
     color: white;
     padding: 10px 15px;
     border: none;
