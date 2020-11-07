@@ -326,14 +326,20 @@
                     {!! Form::close() !!}
 
                     <script>
-                    function submitForm() {
+                    function newsletterSubmit() {
                         document.getElementById("newsletterForm").submit();
+                    }
+
+                    function searchFormSubmit(){
+                        document.getElementById("searchForm").submit();
                     }
                     </script>
 
+
+
                 </div>
                 <div class="subscribe-button-div">
-                    <button onclick="submitForm()" class="subscribe-button">Subscribe</button>
+                    <button onclick="newsletterSubmit()" class="subscribe-button">Subscribe</button>
                 </div>
                 <div class="footer-social">
                     <i class="fa fa-facebook-square" aria-hidden="true" style="font-size: 30px; color: white;"

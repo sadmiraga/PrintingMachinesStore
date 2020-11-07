@@ -15,10 +15,9 @@
 
             {!! Form::open(['url'=>'/search', 'method'=> 'post' , 'enctype'=> 'multipart/form-data',
             'id'=>'searchForm']) !!}
-            @csrf
 
-            <input class="form-control" name="query" type="text" id="search-bar" placeholder="Search..">
-            <a onclick="submitForm()" href="#"><img class="search-icon"
+            <input class="form-control" required="required" name="query" type="text" id="search-bar" placeholder="Search..">
+            <a onclick="searchFormSubmit()" href="#"><img class="search-icon"
                     src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
             {{ Form::close() }}
 
@@ -164,3 +163,4 @@ window.onload = function() {
 
 
 @endsection
+
